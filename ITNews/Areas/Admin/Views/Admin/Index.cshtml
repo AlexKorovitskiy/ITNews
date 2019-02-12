@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Users</h2>
+
+<div id="adminUserListDiv">
+    <div class="list-group">
+
+        <a v-bind:href="item.url" v-for="item in users" class="list-group-item list-group-item-action">
+            {{item.email}}
+        </a>
+    </div>
+</div>
+
+<script src="~/js/Areas/Admin/AdminService.js"></script>
+<script src="~/js/Areas/Admin/Users.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script src=""></script>
+
+<script>
+    debugger;
+    $(document).ready(function () {
+        let loader = new Loader({ getActionsUrl: domainPath + '/api/admin/getActions' });
+        loader.getActions()
+            .done(function (data) {
+                let service = new AdminService(data.actions);
+                let viewModel = new UsersViewModel(service);
+                viewModel.usersVue.initialize();
+            });
+
+    })
+</script>

@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "signalrapp",
+  "private": true,
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  }
+}

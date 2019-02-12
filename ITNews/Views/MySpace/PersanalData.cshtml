@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "PersanalData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Persanal Data</h1>
+
+<div id="persanaldataContainer" class="row">
+    <div class="col-md-4">
+        <img src="~/icon/man_default_avatar.png" class="img-circle" alt="Cinque Terre">
+    </div>
+    <div class="col-md-8">
+        <div class="form-group">
+            <label for="inputEmail" class="col-form-label">Email</label>
+            <input id="inputEmail" v-model="user.email"
+                   class="form-control" type="text" name="name" value="" placeholder="email@example.com" />
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-form-label">Password</label>
+            <input id="inputPassword" v-model="user.password"
+                   class="form-control" type="password" name="name" value="" placeholder="password" />
+        </div>
+        <div class="form-group">
+            <label for="inputName" class="col-form-label">Name</label>
+            <input id="inputName" v-model="user.name"
+                   class="form-control" type="text" name="name" value="" placeholder="Your name" />
+        </div>
+        <input type="button" class="btn btn-secondary" name="name" value="Apply" v-on:click="saveUser" />
+    </div>
+</div>
+
+<script src="~/js/user/User.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script src="~/js/mySpace/MySpaceService.js"></script>
+<script src="~/js/mySpace/persanalData.js"></script>
+
+<script>
+    $(document).ready(function () {
+        let loader = new Loader({ getActionsUrl: domainPath + '/api/myspace/getActions' });
+        loader.getActions()
+            .done(function (data) {
+                debugger;
+                let service = new MySpaceService(data.actions);
+                let vewModel = new PesanalDataViewModel(service);
+                vewModel.persanalDataVue.initialize();
+            })
+    })
+</script>

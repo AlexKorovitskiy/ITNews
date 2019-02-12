@@ -1,0 +1,17 @@
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\bin\Debug\netcoreapp2.1\ITNews.deps.json
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\bin\Debug\netcoreapp2.1\ITNews.runtimeconfig.json
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\bin\Debug\netcoreapp2.1\ITNews.runtimeconfig.dev.json
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\bin\Debug\netcoreapp2.1\ITNews.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.csprojAssemblyReference.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.csproj.CoreCompileInputs.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.RazorAssemblyInfo.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.RazorAssemblyInfo.cs
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.AssemblyInfoInputs.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.AssemblyInfo.cs
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.RazorTargetAssemblyInfo.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\bin\Debug\netcoreapp2.1\ITNews.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\bin\Debug\netcoreapp2.1\DomainModels.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\bin\Debug\netcoreapp2.1\DomainModels.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\ITNews\obj\Debug\netcoreapp2.1\ITNews.csproj.CopyComplete

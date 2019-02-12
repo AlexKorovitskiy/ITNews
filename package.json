@@ -1,0 +1,9 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.0",
+    "bootstrap-markdown-editor-4": "^3.0.0",
+    "signalr": "^2.4.0"
+  }
+}

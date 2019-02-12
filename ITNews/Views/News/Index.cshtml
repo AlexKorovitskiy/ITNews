@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>News</h1>
+
+<div id="newsBlock">
+    <textarea id="qwerty">fsdfsdf</textarea>
+</div>
+
+<script src="~/js/news/news.js"></script>
+<script src="~/js/markDown/simplemde.min.js"></script>
+<link href="~/css/markDown/simplemde.min.css" rel="stylesheet" />
+
+<script>
+    new SimpleMDE({
+        element: document.getElementById("qwerty"),
+        spellChecker: false,
+    });
+</script>

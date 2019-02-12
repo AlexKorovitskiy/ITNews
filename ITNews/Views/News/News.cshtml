@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "News";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>News</h1>
+
+<Div id="newsEntity">
+    <div>
+        <div class="form-group">
+            <input id="newsName" style="cursor:auto" class="form-control" type="text" name="name" v-model="newsModel.name" readonly="readonly" />
+        </div>
+        <div class="form-group">
+            <input id="newsDescription" style="cursor:auto" class="form-control" type="text" name="name" v-model="newsModel.description" readonly="readonly" />
+        </div>
+        <div class="form-group">
+            <textarea id="newsTextContent" v-model="newsModel.content"></textarea>
+        </div>
+        <div class="form-group">
+            <div style="text-align:right">
+                <input type="button" class="btn btn-light" style="display:inline-block" name="name" value="Apply" v-on:click="editNews" />
+            </div>
+        </div>
+    </div>
+</Div>
+
+<script src="~/js/markDown/MarkDownHelper.js"></script>
+<script src="~/js/news/newsModel.js"></script>
+<script src="~/js/news/newsEntity.js"></script>
+
+<script src="~/js/markDown/ace/1.1.3/ace.js"></script>
+<script src="~/js/markDown/ace/1.1.3/ext-language_tools.js"></script>
+<script src="~/js/markDown/ace/1.1.3/mode-markdown.js"></script>
+<script src="~/js/markDown/ace/1.1.3/theme-tomorrow.js"></script>
+<script src="~/js/markDown/marked/0.3.2/marked.min.js"></script>
+<script src="~/js/markDown/jquery/2.1.3/jquery.min.js"></script>
+
+<link href="~/css/markDown/bootstrap-markdown-editor.css" rel="stylesheet">
+<script src="~/lib/bootstap_3.3.1/js/bootstrap.min.js"></script>
+<script src="~/js/markDown/bootstrap-markdown-editor.js"></script>

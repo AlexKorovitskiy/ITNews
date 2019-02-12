@@ -1,0 +1,12 @@
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\bin\Debug\netcoreapp2.2\Repositories.deps.json
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\bin\Debug\netcoreapp2.2\Repositories.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\bin\Debug\netcoreapp2.2\Repositories.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\bin\Debug\netcoreapp2.2\RepositoryModels.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\bin\Debug\netcoreapp2.2\RepositoryModels.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.csprojAssemblyReference.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfoInputs.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfo.cs
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CopyComplete
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.pdb

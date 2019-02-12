@@ -1,0 +1,14 @@
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\bin\Debug\netcoreapp2.2\Domain.deps.json
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\bin\Debug\netcoreapp2.2\Domain.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\bin\Debug\netcoreapp2.2\Domain.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\bin\Debug\netcoreapp2.2\DomainModels.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\bin\Debug\netcoreapp2.2\RepositoryModels.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\bin\Debug\netcoreapp2.2\DomainModels.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\bin\Debug\netcoreapp2.2\RepositoryModels.pdb
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\obj\Debug\netcoreapp2.2\Domain.csprojAssemblyReference.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\obj\Debug\netcoreapp2.2\Domain.csproj.CoreCompileInputs.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\obj\Debug\netcoreapp2.2\Domain.AssemblyInfoInputs.cache
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\obj\Debug\netcoreapp2.2\Domain.AssemblyInfo.cs
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\obj\Debug\netcoreapp2.2\Domain.csproj.CopyComplete
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\obj\Debug\netcoreapp2.2\Domain.dll
+C:\Users\alexander.korovitsky\source\repos\ITNews\Services\obj\Debug\netcoreapp2.2\Domain.pdb

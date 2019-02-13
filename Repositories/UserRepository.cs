@@ -22,5 +22,24 @@ namespace Repositories
                 .Include(x => x.UserRoles).ThenInclude(x => x.Role)
                 .FirstOrDefault();
         }
+
+        public override void Update(User entity)
+        {
+            var user = ApplicationContext.Set<User>().Include(x=>x.UserRoles).FirstOrDefault(x => x.Id == entity.Id);
+            user.Name = entity.Name;
+            user.Email = entity.Email;
+            foreach (var item in entity.UserRoles)
+            {
+                if (user.UserRoles.FirstOrDefault(x => x.RoleId == item.RoleId) == null)
+                    user.UserRoles.Add(item);
+            }
+            foreach (var item in user.UserRoles)
+            {
+                if (entity.UserRoles.FirstOrDefault(x => x.RoleId == item.RoleId) == null)
+                    ApplicationContext.Entry(item).State = EntityState.Deleted;
+            }
+
+            ApplicationContext.SaveChanges();
+        }
     }
 }

@@ -33,6 +33,8 @@ namespace Infrostructure
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<INewsService, NewsService>();
             services.AddTransient<INewsRepository, NewsRepository>();
+            services.AddTransient<IRoleService, RoleService>();
+            services.AddTransient<IRoleRepository, RoleRepository>();
             //services.AddTransient<IEntityRepository<Role>, RoleInfo>();
         }
 
@@ -52,9 +54,9 @@ namespace Infrostructure
                     .ForMember(x => x.UserRoles, q => q.Ignore())
                     .AfterMap((x, y) =>
                     {
-                        y.UserRoles = new List<UserRole> { new UserRole { RoleId = 1 } };/*x.Roles != null
-                        ? x.Roles.Select(q => new UserRole { RoleId = q.Id })
-                        : null;*/
+                        y.UserRoles = x.Roles != null //new List<UserRole> { new UserRole { RoleId = 1 } };
+                        ? x.Roles.Select(q => new UserRole { RoleId = q.Id, UserId = x.Id }).ToList()
+                        : null;
                     });
                 config.CreateMap<Role, RoleInfo>();
                 config.CreateMap<RoleInfo, Role>();

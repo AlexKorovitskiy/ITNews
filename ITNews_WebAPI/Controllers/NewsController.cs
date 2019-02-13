@@ -8,6 +8,7 @@ using DomainModels.ServiceInterfaces;
 using ITNews_WebAPI.Hubs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
 
 namespace ITNews_WebAPI.Controllers
@@ -16,11 +17,12 @@ namespace ITNews_WebAPI.Controllers
     public class NewsController : ITNewsBaseController
     {
         INewsService newsService;
-        NewsHub newsHub;
-        public NewsController(INewsService newsService)
+        IHubContext<NewsHub, INewsHubClient> newsContext;
+
+        public NewsController(INewsService newsService, IHubContext<NewsHub, INewsHubClient> newsContext)
         {
             this.newsService = newsService;
-            this.newsHub = new NewsHub();
+            this.newsContext = newsContext;
         }
 
         [Route("GetAllNews")]
@@ -28,7 +30,7 @@ namespace ITNews_WebAPI.Controllers
         public IEnumerable<NewsInfo> GetAllNews()
         {
             var news = newsService.GetModelCollections();
-            
+
             return news;
         }
 
@@ -53,7 +55,7 @@ namespace ITNews_WebAPI.Controllers
         {
             news.AuthorId = UserId;
             newsService.Create(news);
-            newsHub.AddNews(news).Start();
+            newsContext.Clients.All.AddNews(news);
         }
 
         [Authorize(Roles = "admin,writer")]
@@ -62,6 +64,7 @@ namespace ITNews_WebAPI.Controllers
         public void EditNews(NewsInfo news)
         {
             newsService.Update(news);
+            newsContext.Clients.All.UpdateNews(news);
         }
 
         [HttpGet]
@@ -82,6 +85,7 @@ namespace ITNews_WebAPI.Controllers
                 }
             }
             newsService.Delete(id);
+            newsContext.Clients.All.RemoveNews(id);
         }
     }
 }

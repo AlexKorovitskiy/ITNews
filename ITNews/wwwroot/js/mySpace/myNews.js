@@ -32,7 +32,9 @@
                                 self.myNewsBlock.markdownsArray.push({ key: key, value: value })
                             })
                         });
-                        self.myNewsBlock.newsHub = new NewsHub(myNewsBlock.pushNewsToMainArray, myNewsBlock.deleteNewsFromMainArray)
+                        self.myNewsBlock.newsHub = new NewsHub(self.myNewsBlock.pushNewsToMainArray,
+                            self.myNewsBlock.updateNewsFromMainArray,
+                            self.myNewsBlock.deleteNewsFromMainArray)
                     })
                     .fail(function (data) {
                     });
@@ -57,6 +59,14 @@
             pushNewsToMainArray: function (news) {
                 self.myNewsBlock.news.push(news);
             },
+            updateNewsFromMainArray: function (news) {
+                self.myNewsBlock.news.some(function (item, index) {
+                    if (item.id == news.id) {
+                        Vue.set(self.myNewsBlock.news, index, news)
+                    }
+                    return false;
+                });
+            },
             deleteNewsFromMainArray: function (id) {
                 let currentIndex;
                 self.myNewsBlock.news.some(function (item, index) {
@@ -71,7 +81,6 @@
             deleteNews: function (id) {
                 self._service.deleteNews(id)
                     .done(function (data) {
-                        self.myNewsBlock.newsHub.removeNews(id);
                         showSuccessAlert();
                     })
                     .fail(function (data) {

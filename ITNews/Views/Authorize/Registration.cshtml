@@ -36,7 +36,7 @@
     $(document).ready(function () {
         $('#inputEmail').focus();
 
-        var loader = new Loader({ getActionsUrl: domainPath + '/getActions' });
+        var loader = new Loader({ getActionsUrl: domainPath + '/api/Authorize/getActions' });
         loader.getActions().done(function (data) {
             let service = new AuthorizeService(data.actions);
             let viewModel = new RegistrationViewModel(service);

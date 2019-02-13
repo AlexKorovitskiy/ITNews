@@ -6,5 +6,5 @@
     self.name = name;
     self.photo = photo;
     self.roles = roles;
-    self.url = frontPath + '/?id=' + id;
+    self.url = frontPath + '/Admin/Admin/profile' + '/?id=' + id;
 }

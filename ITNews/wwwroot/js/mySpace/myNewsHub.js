@@ -1,4 +1,4 @@
-﻿var NewsHub = function (addnewsCallBack, deleteCallBack) {
+﻿var NewsHub = function (addCallBack, updateCallBack, deleteCallBack) {
     let self = this;
     self._url = domainPath + '/newshub';
 
@@ -7,8 +7,9 @@
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
-    self.connection.on("addNewsFromServer", addnewsCallBack);
-    self.connection.on("deleteNewsFromServer", deleteCallBack);
+    self.connection.on("AddNews", addCallBack);
+    self.connection.on("UpdateNews", updateCallBack);
+    self.connection.on("RemoveNews", deleteCallBack);
     self.connection.start();
 
     self.addNews = function (news) {

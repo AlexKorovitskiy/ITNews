@@ -7,3 +7,12 @@ C:\Users\alexander.korovitsky\source\repos\ITNews\DomainModels\obj\Debug\netcore
 C:\Users\alexander.korovitsky\source\repos\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.AssemblyInfo.cs
 C:\Users\alexander.korovitsky\source\repos\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.dll
 C:\Users\alexander.korovitsky\source\repos\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.pdb
+C:\dev\ITNews\DomainModels\bin\Debug\netcoreapp2.1\DomainModels.deps.json
+C:\dev\ITNews\DomainModels\bin\Debug\netcoreapp2.1\DomainModels.dll
+C:\dev\ITNews\DomainModels\bin\Debug\netcoreapp2.1\DomainModels.pdb
+C:\dev\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.csprojAssemblyReference.cache
+C:\dev\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.csproj.CoreCompileInputs.cache
+C:\dev\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.AssemblyInfoInputs.cache
+C:\dev\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.AssemblyInfo.cs
+C:\dev\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.dll
+C:\dev\ITNews\DomainModels\obj\Debug\netcoreapp2.1\DomainModels.pdb

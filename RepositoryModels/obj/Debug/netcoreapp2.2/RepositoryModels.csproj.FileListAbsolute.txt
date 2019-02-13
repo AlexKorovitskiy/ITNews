@@ -7,3 +7,12 @@ C:\Users\alexander.korovitsky\source\repos\ITNews\RepositoryModels\obj\Debug\net
 C:\Users\alexander.korovitsky\source\repos\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.AssemblyInfo.cs
 C:\Users\alexander.korovitsky\source\repos\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.dll
 C:\Users\alexander.korovitsky\source\repos\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.pdb
+C:\dev\ITNews\RepositoryModels\bin\Debug\netcoreapp2.2\RepositoryModels.deps.json
+C:\dev\ITNews\RepositoryModels\bin\Debug\netcoreapp2.2\RepositoryModels.dll
+C:\dev\ITNews\RepositoryModels\bin\Debug\netcoreapp2.2\RepositoryModels.pdb
+C:\dev\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.csprojAssemblyReference.cache
+C:\dev\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.csproj.CoreCompileInputs.cache
+C:\dev\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.AssemblyInfoInputs.cache
+C:\dev\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.AssemblyInfo.cs
+C:\dev\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.dll
+C:\dev\ITNews\RepositoryModels\obj\Debug\netcoreapp2.2\RepositoryModels.pdb

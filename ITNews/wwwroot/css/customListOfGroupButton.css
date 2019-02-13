@@ -1,0 +1,73 @@
+﻿.custumGroup-withButn {
+    display: flex;
+    flex-direction: column;
+}
+
+    .custumGroup-withButn .custumGroupItem-withButn .btn-group {
+        display: flex;
+        margin-bottom: -1px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 0px;
+    }
+
+        .custumGroup-withButn .custumGroupItem-withButn .btn-group button {
+            padding: .75rem 1.25rem;
+            border-radius: 0px;
+            text-align: left;
+            border: none
+        }
+
+            .custumGroup-withButn .custumGroupItem-withButn .btn-group button:focus {
+                box-shadow: none;
+                outline: 5px auto -webkit-focus-ring-color;
+            }
+
+            .custumGroup-withButn .custumGroupItem-withButn .btn-group button:focus, .custumGroup-withButn .custumGroupItem-withButn .btn-group button:hover {
+                z-index: 1;
+                color: #495057;
+                text-decoration: none;
+                background-color: #f8f9fa;
+            }
+
+                .custumGroup-withButn .custumGroupItem-withButn .btn-group button:focus + button, .custumGroup-withButn .custumGroupItem-withButn .btn-group button:hover + button {
+                    z-index: 1;
+                    color: #495057;
+                    text-decoration: none;
+                    background-color: #f8f9fa;
+                }
+
+            .custumGroup-withButn .custumGroupItem-withButn .btn-group button:active {
+                color: #212529;
+                background-color: #e9ecef;
+            }
+
+        .custumGroup-withButn .custumGroupItem-withButn .btn-group :first-child {
+            width: 95%;
+        }
+
+    .custumGroup-withButn .custumGroupItem-withButn:first-child .btn-group {
+        border-top-left-radius: .25rem;
+        border-top-right-radius: .25rem;
+    }
+
+        .custumGroup-withButn .custumGroupItem-withButn:first-child .btn-group :first-child {
+            border-top-left-radius: .25rem;
+        }
+
+        .custumGroup-withButn .custumGroupItem-withButn:first-child .btn-group :last-child {
+            border-top-right-radius: .25rem;
+        }
+
+    .custumGroup-withButn .custumGroupItem-withButn:last-child .btn-group {
+        border-bottom-left-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+    }
+
+        .custumGroup-withButn .custumGroupItem-withButn:last-child .btn-group :first-child {
+            border-bottom-left-radius: .25rem;
+        }
+
+        .custumGroup-withButn .custumGroupItem-withButn:last-child .btn-group :last-child {
+            border-bottom-right-radius: .25rem;
+        }

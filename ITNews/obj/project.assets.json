@@ -12989,11 +12989,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\ITNews\\ITNews.csproj",
+      "projectUniqueName": "C:\\dev\\ITNews\\ITNews\\ITNews.csproj",
       "projectName": "ITNews",
-      "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\ITNews\\ITNews.csproj",
+      "projectPath": "C:\\dev\\ITNews\\ITNews\\ITNews.csproj",
       "packagesPath": "C:\\Users\\alexander.korovitsky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\ITNews\\obj\\",
+      "outputPath": "C:\\dev\\ITNews\\ITNews\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

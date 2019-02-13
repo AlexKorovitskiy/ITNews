@@ -11,10 +11,10 @@
                 cache: false
             })
                 .done(function (data) {
-                    debugger;
+
                 })
                 .fail(function (data) {
-                    debugger
+
                 });
         }
     }

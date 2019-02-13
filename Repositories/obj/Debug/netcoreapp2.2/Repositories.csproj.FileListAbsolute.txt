@@ -10,3 +10,15 @@ C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcore
 C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CopyComplete
 C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.dll
 C:\Users\alexander.korovitsky\source\repos\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.pdb
+C:\dev\ITNews\Repositories\bin\Debug\netcoreapp2.2\Repositories.deps.json
+C:\dev\ITNews\Repositories\bin\Debug\netcoreapp2.2\Repositories.dll
+C:\dev\ITNews\Repositories\bin\Debug\netcoreapp2.2\Repositories.pdb
+C:\dev\ITNews\Repositories\bin\Debug\netcoreapp2.2\RepositoryModels.dll
+C:\dev\ITNews\Repositories\bin\Debug\netcoreapp2.2\RepositoryModels.pdb
+C:\dev\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.csprojAssemblyReference.cache
+C:\dev\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CoreCompileInputs.cache
+C:\dev\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfoInputs.cache
+C:\dev\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfo.cs
+C:\dev\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CopyComplete
+C:\dev\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.dll
+C:\dev\ITNews\Repositories\obj\Debug\netcoreapp2.2\Repositories.pdb

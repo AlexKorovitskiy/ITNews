@@ -689,11 +689,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj",
+      "projectUniqueName": "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj",
       "projectName": "DomainModels",
-      "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj",
+      "projectPath": "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj",
       "packagesPath": "C:\\Users\\alexander.korovitsky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\obj\\",
+      "outputPath": "C:\\dev\\ITNews\\DomainModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

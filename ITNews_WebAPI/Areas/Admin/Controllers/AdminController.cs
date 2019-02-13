@@ -25,11 +25,11 @@ namespace ITNews_WebAPI.Areas.Admin.Controllers
         {
             var actionsObject = new
             {
-                //myNewsAction = Url.Action("Index", "Admin", null, this.Request.Scheme, this.Request.Host.Value),
-                getUsersAction = Url.Action("GetUsers", "User", null, this.Request.Scheme, this.Request.Host.Value)
-                //getCurrentUserAction = Url.Action("GetCurrentUser", "MySpace", null, this.Request.Scheme, this.Request.Host.Value),
-                //deleteNews = Url.Action("DeleteNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
-                //updateUserAction = Url.Action("updateUser", "User", null, this.Request.Scheme, this.Request.Host.Value)
+                getUserAction = Url.Action("GetUser", "User", null, this.Request.Scheme, this.Request.Host.Value),
+                getUsersAction = Url.Action("GetUsers", "User", null, this.Request.Scheme, this.Request.Host.Value),
+                getRolesAction = Url.Action("getRoles", "Role", null, this.Request.Scheme, this.Request.Host.Value),
+                updateUserAction = Url.Action("updateUser", "User", null, this.Request.Scheme, this.Request.Host.Value),
+                deleteUserAction = Url.Action("deleteUser", "User", null, this.Request.Scheme, this.Request.Host.Value)
             };
             return Json(new { actions = actionsObject });
         }

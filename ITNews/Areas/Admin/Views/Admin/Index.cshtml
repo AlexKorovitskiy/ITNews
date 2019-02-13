@@ -1,27 +1,40 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";//"~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Users</h2>
 
 <div id="adminUserListDiv">
-    <div class="list-group">
+    <div class="list-group customListGroupWithBtns">
+        <!--
 
         <a v-bind:href="item.url" v-for="item in users" class="list-group-item list-group-item-action">
             {{item.email}}
         </a>
+        <button v-for="item in users" v-on:click="openUserProfileClick(item)" type="button" class="list-group-item list-group-item-action">
+            {{item.email}}
+        </button>
+    -->
+        <div class="custumGroup-withButn">
+            <div v-for="item in users" class="custumGroupItem-withButn">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button v-on:click="openUserProfileClick(item)" type="button" class="btn">{{item.email}}</button>
+                    <button v-on:click="deleteUserClick(item)" type="button" class="btn">&times;</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <br />
 </div>
 
 <script src="~/js/Areas/Admin/AdminService.js"></script>
 <script src="~/js/Areas/Admin/Users.js"></script>
 <script src="~/js/base/loader.js"></script>
-<script src=""></script>
+<script src="~/js/user/UsersHub.js"></script>
 
 <script>
-    debugger;
     $(document).ready(function () {
         let loader = new Loader({ getActionsUrl: domainPath + '/api/admin/getActions' });
         loader.getActions()

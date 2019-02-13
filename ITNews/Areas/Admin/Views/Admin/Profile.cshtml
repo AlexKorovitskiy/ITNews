@@ -6,3 +6,23 @@
 
 <h2>Profile</h2>
 
+@{Html.RenderPartial("_UserProfile");}
+
+<script src="~/js/user/User.js"></script>
+<script src="~/js/user/UserProfileViewModel.js"></script>
+<script src="~/js/Areas/Admin/UserProfileService.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script src="~/js/user/Role.js"></script>
+
+<script>
+    $(document).ready(function () {
+        let loader = new Loader({ getActionsUrl: domainPath + '/api/admin/GetActions' });
+        loader.getActions()
+            .done(function (data) {
+                let service = new UserProfileService(data.actions);
+                let viewModel = new UserProfileViewModel(service);
+                viewModel.persanalDataVue.initialize();
+            });
+    })
+</script>
+

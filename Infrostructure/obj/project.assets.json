@@ -3668,11 +3668,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Infrostructure\\Infrostructure.csproj",
+      "projectUniqueName": "C:\\dev\\ITNews\\Infrostructure\\Infrostructure.csproj",
       "projectName": "Infrostructure",
-      "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Infrostructure\\Infrostructure.csproj",
+      "projectPath": "C:\\dev\\ITNews\\Infrostructure\\Infrostructure.csproj",
       "packagesPath": "C:\\Users\\alexander.korovitsky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Infrostructure\\obj\\",
+      "outputPath": "C:\\dev\\ITNews\\Infrostructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3691,14 +3691,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj"
+            "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj"
             },
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Repositories\\Repositories.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Repositories\\Repositories.csproj"
+            "C:\\dev\\ITNews\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\Repositories\\Repositories.csproj"
             },
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Services\\Domain.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Services\\Domain.csproj"
+            "C:\\dev\\ITNews\\Services\\Domain.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\Services\\Domain.csproj"
             }
           }
         }

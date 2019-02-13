@@ -7,16 +7,21 @@ using System.Threading.Tasks;
 
 namespace ITNews_WebAPI.Hubs
 {
-    public class NewsHub : Hub
+    public class NewsHub : Hub<INewsHubClient>
     {
-        public async Task AddNews(NewsInfo news)
+        public void AddNews(NewsInfo news)
         {
-            await Clients.All.SendAsync("addNewsFromServer", news);
+            Clients.All.AddNews(news);
         }
 
-        public async Task RemoveNews(int id)
+        public void UpdateNews(NewsInfo news)
         {
-            await Clients.All.SendAsync("deleteNewsFromServer", id );
+            Clients.All.UpdateNews(news);
+        }
+
+        public void RemoveNews(int id)
+        {
+            Clients.All.RemoveNews(id);
         }
     }
 }

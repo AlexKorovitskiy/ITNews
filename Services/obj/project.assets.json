@@ -1451,11 +1451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Services\\Domain.csproj",
+      "projectUniqueName": "C:\\dev\\ITNews\\Services\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Services\\Domain.csproj",
+      "projectPath": "C:\\dev\\ITNews\\Services\\Domain.csproj",
       "packagesPath": "C:\\Users\\alexander.korovitsky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Services\\obj\\",
+      "outputPath": "C:\\dev\\ITNews\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1474,11 +1474,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj"
+            "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj"
             },
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\RepositoryModels\\RepositoryModels.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\RepositoryModels\\RepositoryModels.csproj"
+            "C:\\dev\\ITNews\\RepositoryModels\\RepositoryModels.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\RepositoryModels\\RepositoryModels.csproj"
             }
           }
         }

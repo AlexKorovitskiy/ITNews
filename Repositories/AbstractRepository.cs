@@ -49,7 +49,9 @@ namespace Repositories
             //var sudent = GetModelById(entity.Id);
             //ApplicationContext.DbSet<T>().Attach(entity);
             //var list = ApplicationContext.Set<T>().ToList();
-            ApplicationContext.Entry(ApplicationContext.Set<T>().Find(entity.Id)).CurrentValues.SetValues(entity);
+            var findedEntity = ApplicationContext.Set<T>().Find(entity.Id);
+            var entry = ApplicationContext.Entry(findedEntity);
+            entry.CurrentValues.SetValues(entity);
 
             //ApplicationContext.Entry(entity).State = EntityState.Modified;
             ApplicationContext.SaveChanges();

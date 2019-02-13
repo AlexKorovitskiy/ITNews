@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\RepositoryModels\\RepositoryModels.csproj",
+      "projectUniqueName": "C:\\dev\\ITNews\\RepositoryModels\\RepositoryModels.csproj",
       "projectName": "RepositoryModels",
-      "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\RepositoryModels\\RepositoryModels.csproj",
+      "projectPath": "C:\\dev\\ITNews\\RepositoryModels\\RepositoryModels.csproj",
       "packagesPath": "C:\\Users\\alexander.korovitsky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\RepositoryModels\\obj\\",
+      "outputPath": "C:\\dev\\ITNews\\RepositoryModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

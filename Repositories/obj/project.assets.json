@@ -3489,11 +3489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "C:\\dev\\ITNews\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Repositories\\Repositories.csproj",
+      "projectPath": "C:\\dev\\ITNews\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\alexander.korovitsky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Repositories\\obj\\",
+      "outputPath": "C:\\dev\\ITNews\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3512,8 +3512,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\RepositoryModels\\RepositoryModels.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\RepositoryModels\\RepositoryModels.csproj"
+            "C:\\dev\\ITNews\\RepositoryModels\\RepositoryModels.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\RepositoryModels\\RepositoryModels.csproj"
             }
           }
         }

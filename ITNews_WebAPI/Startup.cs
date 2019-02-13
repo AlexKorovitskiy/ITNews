@@ -93,6 +93,7 @@ namespace ITNews
             app.UseSignalR(routes =>
             {
                 routes.MapHub<NewsHub>("/newshub");
+                routes.MapHub<UsersHub>("/usershub");
             });
 
             app.UseAuthentication();

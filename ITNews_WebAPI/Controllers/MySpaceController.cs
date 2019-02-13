@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using DomainModels.News;
 using DomainModels.ServiceInterfaces;
 using DomainModels.Users;
+using ITNews_WebAPI.Hubs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
 
 namespace ITNews_WebAPI.Controllers

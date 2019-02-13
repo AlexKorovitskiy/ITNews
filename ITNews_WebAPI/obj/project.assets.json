@@ -13086,11 +13086,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\ITNews_WebAPI\\ITNews_WebAPI.csproj",
+      "projectUniqueName": "C:\\dev\\ITNews\\ITNews_WebAPI\\ITNews_WebAPI.csproj",
       "projectName": "ITNews_WebAPI",
-      "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\ITNews_WebAPI\\ITNews_WebAPI.csproj",
+      "projectPath": "C:\\dev\\ITNews\\ITNews_WebAPI\\ITNews_WebAPI.csproj",
       "packagesPath": "C:\\Users\\alexander.korovitsky\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\ITNews_WebAPI\\obj\\",
+      "outputPath": "C:\\dev\\ITNews\\ITNews_WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13109,11 +13109,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\DomainModels\\DomainModels.csproj"
+            "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj"
             },
-            "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Infrostructure\\Infrostructure.csproj": {
-              "projectPath": "C:\\Users\\alexander.korovitsky\\source\\repos\\ITNews\\Infrostructure\\Infrostructure.csproj"
+            "C:\\dev\\ITNews\\Infrostructure\\Infrostructure.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\Infrostructure\\Infrostructure.csproj"
             }
           }
         }

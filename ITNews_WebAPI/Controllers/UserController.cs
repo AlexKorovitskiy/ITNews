@@ -39,7 +39,7 @@ namespace ITNews_WebAPI.Controllers
         {
             var user = userService.GetModelById(id);
             return Json(JsonConvert.SerializeObject(user, Formatting.Indented,
-                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore/* , PreserveReferencesHandling = PreserveReferencesHandling.All */}));
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore}));
         }
 
         [Authorize]

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Repositories
 {
-    public abstract class AbstractRepository<T> : IEntityRepository<T> where T : class, IEntityBaseId, new()
+    public abstract class AbstractRepository<T> : IDisposable, IEntityRepository<T> where T : class, IEntityBaseId, new()
     {
         protected ApplicationDbContext ApplicationContext { get; set; }
 
@@ -16,9 +16,9 @@ namespace Repositories
             ApplicationContext = new ApplicationDbContext();
         }
 
-        public virtual void Create(T entiry)
+        public virtual void Create(T entity)
         {
-            ApplicationContext.Set<T>().Add(entiry);
+            ApplicationContext.Set<T>().Add(entity);
             ApplicationContext.SaveChanges();
         }
 
@@ -62,6 +62,11 @@ namespace Repositories
         public IQueryable<T> GetQuery()
         {
             return ApplicationContext.Set<T>().AsQueryable();
+        }
+
+        public void Dispose()
+        {
+            ApplicationContext.Dispose();
         }
     }
 }

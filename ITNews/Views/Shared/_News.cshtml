@@ -1,0 +1,132 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div id="newsPartial" class="col-md-8 offset-2">
+    <div class="form-group row">
+        <label class="col-form-label col-sm-2">Name</label>
+        <input class="form-control col-sm-10" type="text" name="name" v-model="news.name" />
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-sm-2">Description</label>
+        <input class="form-control col-sm-10" type="text" name="name" v-model="news.description" />
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-sm-2">Content</label>
+        <textarea class="form-control col-sm-10" id="createNewsTextArea" v-model="news.content"></textarea>
+    </div>
+    <div class="tags-form">
+        <div class="tags-label">
+            <div class="d-flex flex-row-reverse bd-highlight flex-wrap">
+                <div v-for="item in selectedTags" class="p-2 bd-highlight align-items-center">
+                    <span class="d-flex badge badge-pill badge-secondary">
+                        <span class="align-self-center">#{{item}}</span>
+                        <button type="button" v-on:click="removeTag(item)" class="close align-self-center" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="tags-input d-flex flex-row-reverse bd-highlight">
+            <div class="p-2 bd-highlight">
+                <form autocomplete="off" action="/action_page.php">
+                    <label class="col-form-label-sm">Tags:</label>
+                    <div class="autocomplete" style="width:300px;">
+                        <input class="form-control-sm" id="myInput" type="text" name="myCountry" placeholder="tag">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="section-div d-flex justify-content-end">
+        <div class="input-group mb-3 p-2 col-md-5">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="selectSection">Section</label>
+            </div>
+            <select class="custom-select" id="selectSection" v-model="news.sectionId">
+                <option v-for="section in sections" v-bind:value="section.id">{{section.name}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div style="text-align:right">
+        <input id="applyNewNews" v-on:click="applyClick" type="button" style="display:inline-block" class="btn btn-light" name="apply" value="Apply" />
+    </div>
+</div>
+
+<link href="~/css/newsPartial.css" rel="stylesheet" />
+<!--
+
+<script src="~/js/NewsPartialVue.js"></script>
+
+-->
+<script src="~/js/autocomplite.js"></script>
+<script>
+       /* $(document).ready(function () {
+            window.viewModel = new NewsPartialViewModel();
+            window.viewModel.newsVue.initialize();
+        });*/
+</script>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font: 16px Arial;
+    }
+
+    .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+    }
+
+    input {
+        border: 1px solid transparent;
+        background-color: #f1f1f1;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+        input[type=text] {
+            background-color: #f1f1f1;
+            width: 100%;
+        }
+
+        input[type=submit] {
+            background-color: DodgerBlue;
+            color: #fff;
+        }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+
+        .autocomplete-items div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+            .autocomplete-items div:hover {
+                /*when hovering an item:*/
+                background-color: #e9e9e9;
+            }
+
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue !important;
+        color: #ffffff;
+    }
+</style>

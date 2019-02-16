@@ -17,12 +17,19 @@ namespace ITNews_WebAPI.Controllers
     public class NewsController : ITNewsBaseController
     {
         INewsService newsService;
+        ITagService tagService;
+        ISectionService sectionService;
         IHubContext<NewsHub, INewsHubClient> newsContext;
 
-        public NewsController(INewsService newsService, IHubContext<NewsHub, INewsHubClient> newsContext)
+        public NewsController(INewsService newsService,
+            IHubContext<NewsHub, INewsHubClient> newsContext,
+            ITagService tagService,
+            ISectionService sectionService)
         {
             this.newsService = newsService;
             this.newsContext = newsContext;
+            this.sectionService = sectionService;
+            this.tagService = tagService;
         }
 
         [Route("GetAllNews")]
@@ -86,6 +93,37 @@ namespace ITNews_WebAPI.Controllers
             }
             newsService.Delete(id);
             newsContext.Clients.All.RemoveNews(id);
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public JsonResult GetTags()
+        {
+            var tags = tagService.GetModelCollections();
+            return Json(JsonConvert.SerializeObject(tags, Formatting.Indented,
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }));
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public JsonResult GetAllSectionsOfNews()
+        {
+            var sections = sectionService.GetModelCollections();
+            return Json(JsonConvert.SerializeObject(sections, Formatting.Indented,
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }));
+        }
+
+        [HttpGet]
+        [Route("[action]")]
+        public IActionResult GetActions()
+        {
+            var actionsObject = new
+            {
+                getAllTagsAction = Url.Action("GetTags", "News", null, this.Request.Scheme, this.Request.Host.Value),
+                getAllSectionsOfNewsAction = Url.Action("GetAllSectionsOfNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
+                createNewsAction = Url.Action("AddNews", "News", null, this.Request.Scheme, this.Request.Host.Value)
+            };
+            return Json(new { actions = actionsObject });
         }
     }
 }

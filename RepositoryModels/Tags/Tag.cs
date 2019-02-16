@@ -6,6 +6,6 @@ namespace RepositoryModels
 {
     public class Tag : EntityBaseNamed
     {
-        public virtual IEnumerable<NewsTag> NewsTags { get; set; }
+        public virtual ICollection<NewsTag> NewsTags { get; set; }
     }
 }

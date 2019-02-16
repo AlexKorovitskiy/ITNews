@@ -88,7 +88,7 @@ namespace ITNews.Controllers
         }
 
         [HttpGet]
-        [Route("getActions")]
+        [Route("[action]")]
         public IActionResult GetActions()
         {
             var actionsObject = new

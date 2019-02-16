@@ -10,7 +10,7 @@ namespace ITNews.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View("News1");
         }
 
         public IActionResult News()

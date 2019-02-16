@@ -1,4 +1,85 @@
-﻿var newsEntity = new Vue({
+﻿let NewsViewModel = function (service) {
+    let self = this;
+    self._service = service;
+    self.newsVue = new Vue({
+        el: '#newsPartial',
+        data: {
+            news: new NewsModel(),
+            tagsObject: [],
+            tagsStringArray: [],
+            selectedTags: [],
+            sections: []
+        },
+        methods: {
+            initialize: function () {
+                self._service.getAllTags()
+                    .done(function (data) {
+                        let tags = JSON.parse(data);
+                        self.newsVue.tagsObject = tags.map(function (item) { return new Tag(item.Id, item.Name) });
+                        self.newsVue.tagsStringArray = tags.map(function (item) { return item.Name; });
+
+                        autocomplete(document.getElementById("myInput"),
+                            self.newsVue.tagsStringArray,
+                            self.newsVue.selectedTags,
+                            self.newsVue.autoCompleteCallBack);
+                    });
+                self._service.getAllSectionsOfNewsAction()
+                    .done(function (data) {
+                        let parsedSection = JSON.parse(data);
+                        self.newsVue.sections = parsedSection.map(function (item) {
+                            return new Section(item.Id, item.Name);
+                        });
+                    });
+            },
+            applyClick: function () {
+                let news = self.newsVue.news;
+                news.tags = [];
+                news.sectionId = 1;
+                self.newsVue.selectedTags.forEach(function (selectedTag) {
+                    let isExist = false;
+                    self.newsVue.tagsObject.forEach(function (tag) {
+                        if (tag.name == selectedTag) {
+                            news.tags.push(tag);
+                            isExist = true;
+                        }
+                    });
+                    if (!isExist) {
+                        news.tags.push(new Tag(undefined, selectedTag))
+                    }
+                });
+                self._service.createNews(news)
+                    .done(function (data) {
+                        showSuccessAlert();
+                    })
+                    .fail(function (data) {
+
+                    });
+            },
+            autoCompleteCallBack: function () {
+                $('#myInput').val('');
+            },
+            removeTag: function (tag) {
+                self.newsVue.selectedTags.forEach(function (item, index) {
+                    if (item == tag) {
+                        self.newsVue.selectedTags.splice(index, 1);
+                    }
+                })
+            }
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+/*
+var newsEntity = new Vue({
     el: '#newsEntity',
     data: {
         newsModel: new NewsModel(1, '', '', '', '', 1, [{ Id: 1 }, { Id: 2 }]),
@@ -78,13 +159,6 @@
                 });
         },
         editNews: function () {
-            /*var news = {
-                Content: $('#newsTextContent').val(),
-                Name: newsEntity.newsModel.name,
-                Description: newsEntity.newsModel.description,
-                SectionId: 1,
-                Tags: [{ Id: 1 }, { Id: 2 }]
-            }*/
             newsEntity.newsModel.content = $('#newsTextContent').val();
             $.ajax({
                 type: 'POST',
@@ -104,4 +178,4 @@
 
 $(document).ready(function () {
     newsEntity.initialize();
-})
+})*/

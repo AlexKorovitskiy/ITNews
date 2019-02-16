@@ -1,7 +1,9 @@
 ﻿using Domain;
 using DomainModels;
 using DomainModels.News;
+using DomainModels.Section;
 using DomainModels.ServiceInterfaces;
+using DomainModels.Tag;
 using DomainModels.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,7 +37,10 @@ namespace Infrostructure
             services.AddTransient<INewsRepository, NewsRepository>();
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IRoleRepository, RoleRepository>();
-            //services.AddTransient<IEntityRepository<Role>, RoleInfo>();
+            services.AddTransient<ITagService, TagService>();
+            services.AddTransient<ITagRepository, TagRepository>();
+            services.AddTransient<ISectionService, SectionService>();
+            services.AddTransient<ISectionRepository, SectionRepository>();
         }
 
         public static void InitializeAutoMapper(this IServiceCollection services)
@@ -62,8 +67,21 @@ namespace Infrostructure
                 config.CreateMap<RoleInfo, Role>();
 
                 config.CreateMap<News, NewsInfo>();
-                //.ForMember(x=>x.);
-                config.CreateMap<NewsInfo, News>();
+                config.CreateMap<NewsInfo, News>()
+                    .ForMember(x => x.NewsTags, s => s.Ignore())
+                    .AfterMap((source, dest) =>
+                    {
+                        dest.NewsTags = source.Tags != null
+                        ? source.Tags.Select(x => new NewsTag { NewsId = source.Id, TagId = x.Id, Tag = new Tag { Id = x.Id, Name = x.Name } }).ToList()
+                        : new List<NewsTag>();
+                    });
+
+                config.CreateMap<Tag, TagInfo>();
+                config.CreateMap<TagInfo, Tag>();
+
+
+                config.CreateMap<Section, SectionInfo>();
+                config.CreateMap<SectionInfo, Section>();
             });
         }
     }

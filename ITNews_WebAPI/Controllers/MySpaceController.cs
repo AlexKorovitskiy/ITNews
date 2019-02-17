@@ -30,7 +30,7 @@ namespace ITNews_WebAPI.Controllers
         [HttpGet]
         public IActionResult MyNews()
         { 
-            var news = newsService.GetNewsForUser(UserId);
+            var news = newsService.GetNews(UserId);
             return Json( JsonConvert.SerializeObject(news, Formatting.Indented,
                 new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore/* , PreserveReferencesHandling = PreserveReferencesHandling.All */}));
         }

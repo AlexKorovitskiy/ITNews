@@ -6,17 +6,67 @@
 
 <h1>News</h1>
 
-<div id="newsBlock">
-    <textarea id="qwerty">fsdfsdf</textarea>
+<div id="newsPage">
+
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a v-for="section in sections" :href="'#list-profile'" v-on:click="sectionClick(section.id)"
+                   class="list-group-item list-group-item-action" data-toggle="list" role="tab" aria-controls="home">{{section.name}}</a>
+
+
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="list-group">
+                <div v-for="item in news" class="list-group-item list-group-item-action">
+                    <a v-bind:href="item.url" class="list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{item.name}}</h5>
+                            <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">{{item.description}}</p>
+                    </a>
+                    <small>{{item.authorName}}</small>
+                    <button v-on:click="deleteNews(item.id)" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <!--
+
+        <a v-for="item in news" v-bind:href="item.url" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{item.name}}</h5>
+                <small>3 days ago</small>
+            </div>
+            <p class="mb-1">{{item.description}}</p>
+            <small>{{item.authorName}}</small>
+        </a>
+            >-->
+
+
+            </div>
+        </div>
+    </div>
 </div>
 
-<script src="~/js/news/news.js"></script>
-<script src="~/js/markDown/simplemde.min.js"></script>
-<link href="~/css/markDown/simplemde.min.css" rel="stylesheet" />
 
+<script src="~/js/News/newsModel.js"></script>
+<script src="~/js/news/NewsService.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script src="~/js/News/NewsViewModel.js"></script>
+<script src="~/js/section/Section.js"></script>
 <script>
-    new SimpleMDE({
-        element: document.getElementById("qwerty"),
-        spellChecker: false,
+    $(document).ready(function () {
+        let loader = new Loader({ getActionsUrl: domainPath + '/api/news/getActions' });
+        loader.getActions()
+            .done(function (data) {
+                let service = new NewsService(data.actions);
+                let viewModel = new NewsViewModel(service);
+                viewModel.newsVue.initialize();
+            });
     });
 </script>

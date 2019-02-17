@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "News1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>News1</h2>
+
+@{ Html.RenderPartial("~/Views/Shared/_News.cshtml");}
+
+
+<script src="~/js/section/Section.js"></script>
+<script src="~/js/tag/Tag.js"></script>
+<script src="~/js/news/NewsDetails/NewsDetailsViewModel.js"></script>
+<script src="~/js/news/NewsDetails/NewsDetailsService.js"></script>
+<script src="~/js/news/newsModel.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script>
+    $(document).ready(function () {
+        let loader = new Loader({ getActionsUrl: domainPath + '/api/news/getActions' });
+        loader.getActions()
+            .done(function (data) {
+                let service = new NewsDetailsService(data.actions);
+                let viewModel = new NewsDetailsViewModel(service);
+                viewModel.newsVue.initialize();
+            })
+    });
+</script>
+

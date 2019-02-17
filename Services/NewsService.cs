@@ -5,6 +5,7 @@ using RepositoryModels.RepositoryInterfaces;
 using Services;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Domain
@@ -18,9 +19,14 @@ namespace Domain
             this.newsRepository = repository;
         }
 
-        public IEnumerable<NewsInfo> GetNewsForUser(int userId)
+        public IEnumerable<NewsInfo> GetNews(int userId = 0, int sectionId = 0)
         {
-            var news = newsRepository.GetNewsForUser(userId);
+            Expression<Func<News, bool>> conditionExpression = (x =>
+            (userId == 0 || x.AuthorId == userId)
+            && (sectionId == 0 || x.SectionId == sectionId));
+
+            var news = newsRepository.GetNews(conditionExpression,
+                x => x.Author);
             return AutoMapper.Mapper.Map<IEnumerable<NewsInfo>>(news);
         }
     }

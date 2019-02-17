@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DomainModels;
 using DomainModels.News;
 using DomainModels.ServiceInterfaces;
 using ITNews_WebAPI.Hubs;
@@ -32,19 +29,19 @@ namespace ITNews_WebAPI.Controllers
             this.tagService = tagService;
         }
 
-        [Route("GetAllNews")]
+        [Route("[action]")]
         [HttpGet]
-        public IEnumerable<NewsInfo> GetAllNews()
+        public JsonResult GetNews(int userId = 0, int sectionId = 0)
         {
-            var news = newsService.GetModelCollections();
-
-            return news;
+            var news = newsService.GetNews(userId, sectionId);
+            return Json(JsonConvert.SerializeObject(new { news = news }, Formatting.Indented,
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }));
         }
 
         [Authorize]
-        [Route("getnews")]
+        [Route("[action]")]
         [HttpGet]
-        public IActionResult GetNews(int id)
+        public IActionResult GetNewsDetails(int id)
         {
             if (id <= 0)
             {
@@ -52,7 +49,7 @@ namespace ITNews_WebAPI.Controllers
             }
             var news = newsService.GetModelById(id);
             return Json(JsonConvert.SerializeObject(news, Formatting.Indented,
-                new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects }));
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }));
         }
 
         [Authorize(Roles = "admin,writer")]
@@ -119,6 +116,7 @@ namespace ITNews_WebAPI.Controllers
         {
             var actionsObject = new
             {
+                GetNewsAction = Url.Action("GetNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
                 getAllTagsAction = Url.Action("GetTags", "News", null, this.Request.Scheme, this.Request.Host.Value),
                 getAllSectionsOfNewsAction = Url.Action("GetAllSectionsOfNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
                 createNewsAction = Url.Action("AddNews", "News", null, this.Request.Scheme, this.Request.Host.Value)

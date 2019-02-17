@@ -4,6 +4,7 @@ using RepositoryModels.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Repositories
@@ -37,10 +38,20 @@ namespace Repositories
             base.Create(entity);
         }
 
-        public IEnumerable<News> GetNewsForUser(int userId)
+        public IEnumerable<News> GetNews(Expression<Func<News, bool>> conditions, 
+            params Expression<Func<News, object>>[] includes)
         {
+            var newsQuery = ApplicationContext.Set<News>().AsQueryable();
+            newsQuery = newsQuery.Where(conditions ?? (x => true));
+            foreach (var item in includes)
+            {
+                newsQuery = newsQuery.Include(item);
+            }
+            newsQuery = newsQuery.Include(x => x.NewsTags)
+                    .ThenInclude(x => x.Tag);
+            return newsQuery.ToList();
+
             return ApplicationContext.Set<News>()
-                .Where(x => x.AuthorId == userId)
                 .Include(x => x.Author)
                 .Include(x => x.Section)
                 .Include(x => x.NewsTags)

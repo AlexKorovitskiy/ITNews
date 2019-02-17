@@ -1,13 +1,6 @@
 ﻿let NewsService = function (actions) {
     let self = this;
     self._actions = actions;
-    self.getAllTags = function () {
-        return $.ajax({
-            type: 'GET',
-            url: self._actions.getAllTagsAction,
-            cache: true
-        });
-    };
 
     self.getAllSectionsOfNewsAction = function () {
         return $.ajax({
@@ -16,12 +9,12 @@
             cache: true
         });
     };
-    
-    self.createNews = function (news) {
+    self.getNews = function (userId, sectionId) {
         return $.ajax({
-            type: 'POST',
-            url: self._actions.createNewsAction,
-            data: { news: news }
+            type: 'GET',
+            url: self._actions.getNewsAction,
+            cache: false,
+            data: {userId: userId, sectionId: sectionId}
         });
     };
 }

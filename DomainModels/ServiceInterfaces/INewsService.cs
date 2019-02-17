@@ -7,6 +7,6 @@ namespace DomainModels.ServiceInterfaces
 {
     public interface INewsService : IInfoModelService<NewsInfo>
     {
-        IEnumerable<NewsInfo> GetNewsForUser(int userId);
+        IEnumerable<NewsInfo> GetNews(int userId = 0, int sectionId = 0);
     }
 }

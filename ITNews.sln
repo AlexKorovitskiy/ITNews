@@ -9,17 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainLayer", "DomainLayer", "{16E36424-2B93-4016-B876-508AA13B6771}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainModels", "DomainModels\DomainModels.csproj", "{51E8E753-6A8D-45B8-B854-19795546FC67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITNews.Domain.Contracts", "ITNews.Domain.Contracts\ITNews.Domain.Contracts.csproj", "{51E8E753-6A8D-45B8-B854-19795546FC67}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITNews", "ITNews\ITNews.csproj", "{4E5B3BE9-6E3A-48AD-94FE-7403A5BE3435}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{DB78CE84-2B14-4968-BE3F-C547E3F47F58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITNews.Data.EntityFramework", "ITNews.Data.EntityFramework\ITNews.Data.EntityFramework.csproj", "{DB78CE84-2B14-4968-BE3F-C547E3F47F58}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryModels", "RepositoryModels\RepositoryModels.csproj", "{85B025FD-ED78-4006-9878-33455AD7E3B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITNews.Data.Contracts", "ITNews.Data.Contracts\ITNews.Data.Contracts.csproj", "{85B025FD-ED78-4006-9878-33455AD7E3B5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrostructure", "Infrostructure\Infrostructure.csproj", "{25751075-A662-476A-A4FC-15252E3210A7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Services\Domain.csproj", "{514A5DB2-75FA-425E-9F57-49B851A5C8C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITNews.Domain.Services", "ITNews.Domain.Services\ITNews.Domain.Services.csproj", "{514A5DB2-75FA-425E-9F57-49B851A5C8C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

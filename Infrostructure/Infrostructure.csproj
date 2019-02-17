@@ -9,9 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainModels\DomainModels.csproj" />
-    <ProjectReference Include="..\Repositories\Repositories.csproj" />
-    <ProjectReference Include="..\Services\Domain.csproj" />
+    <ProjectReference Include="..\ITNews.Domain.Contracts\ITNews.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\ITNews.Data.EntityFramework\ITNews.Data.EntityFramework.csproj" />
+    <ProjectReference Include="..\ITNews.Domain.Services\ITNews.Domain.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

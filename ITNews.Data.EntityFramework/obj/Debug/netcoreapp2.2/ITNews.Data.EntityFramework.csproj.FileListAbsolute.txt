@@ -1,0 +1,12 @@
+C:\dev\ITNews\ITNews.Data.EntityFramework\bin\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.deps.json
+C:\dev\ITNews\ITNews.Data.EntityFramework\bin\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.dll
+C:\dev\ITNews\ITNews.Data.EntityFramework\bin\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.pdb
+C:\dev\ITNews\ITNews.Data.EntityFramework\bin\Debug\netcoreapp2.2\ITNews.Data.Contracts.dll
+C:\dev\ITNews\ITNews.Data.EntityFramework\bin\Debug\netcoreapp2.2\ITNews.Data.Contracts.pdb
+C:\dev\ITNews\ITNews.Data.EntityFramework\obj\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.csprojAssemblyReference.cache
+C:\dev\ITNews\ITNews.Data.EntityFramework\obj\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.csproj.CoreCompileInputs.cache
+C:\dev\ITNews\ITNews.Data.EntityFramework\obj\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.AssemblyInfoInputs.cache
+C:\dev\ITNews\ITNews.Data.EntityFramework\obj\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.AssemblyInfo.cs
+C:\dev\ITNews\ITNews.Data.EntityFramework\obj\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.csproj.CopyComplete
+C:\dev\ITNews\ITNews.Data.EntityFramework\obj\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.dll
+C:\dev\ITNews\ITNews.Data.EntityFramework\obj\Debug\netcoreapp2.2\ITNews.Data.EntityFramework.pdb

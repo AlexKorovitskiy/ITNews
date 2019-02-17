@@ -929,54 +929,54 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "Domain/1.0.0": {
+      "ITNews.Data.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/ITNews.Data.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ITNews.Data.Contracts.dll": {}
+        }
+      },
+      "ITNews.Data.EntityFramework/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "ITNews.Data.Contracts": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.1"
+        },
+        "compile": {
+          "bin/placeholder/ITNews.Data.EntityFramework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ITNews.Data.EntityFramework.dll": {}
+        }
+      },
+      "ITNews.Domain.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/ITNews.Domain.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ITNews.Domain.Contracts.dll": {}
+        }
+      },
+      "ITNews.Domain.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "AutoMapper": "8.0.0",
-          "DomainModels": "1.0.0",
-          "RepositoryModels": "1.0.0"
+          "ITNews.Data.Contracts": "1.0.0",
+          "ITNews.Domain.Contracts": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/ITNews.Domain.Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.dll": {}
-        }
-      },
-      "DomainModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.1",
-        "compile": {
-          "bin/placeholder/DomainModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DomainModels.dll": {}
-        }
-      },
-      "Repositories/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.2.1",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.1",
-          "RepositoryModels": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Repositories.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Repositories.dll": {}
-        }
-      },
-      "RepositoryModels/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "compile": {
-          "bin/placeholder/RepositoryModels.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/RepositoryModels.dll": {}
+          "bin/placeholder/ITNews.Domain.Services.dll": {}
         }
       }
     }
@@ -3631,34 +3631,34 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "Domain/1.0.0": {
+    "ITNews.Data.Contracts/1.0.0": {
       "type": "project",
-      "path": "../Services/Domain.csproj",
-      "msbuildProject": "../Services/Domain.csproj"
+      "path": "../ITNews.Data.Contracts/ITNews.Data.Contracts.csproj",
+      "msbuildProject": "../ITNews.Data.Contracts/ITNews.Data.Contracts.csproj"
     },
-    "DomainModels/1.0.0": {
+    "ITNews.Data.EntityFramework/1.0.0": {
       "type": "project",
-      "path": "../DomainModels/DomainModels.csproj",
-      "msbuildProject": "../DomainModels/DomainModels.csproj"
+      "path": "../ITNews.Data.EntityFramework/ITNews.Data.EntityFramework.csproj",
+      "msbuildProject": "../ITNews.Data.EntityFramework/ITNews.Data.EntityFramework.csproj"
     },
-    "Repositories/1.0.0": {
+    "ITNews.Domain.Contracts/1.0.0": {
       "type": "project",
-      "path": "../Repositories/Repositories.csproj",
-      "msbuildProject": "../Repositories/Repositories.csproj"
+      "path": "../ITNews.Domain.Contracts/ITNews.Domain.Contracts.csproj",
+      "msbuildProject": "../ITNews.Domain.Contracts/ITNews.Domain.Contracts.csproj"
     },
-    "RepositoryModels/1.0.0": {
+    "ITNews.Domain.Services/1.0.0": {
       "type": "project",
-      "path": "../RepositoryModels/RepositoryModels.csproj",
-      "msbuildProject": "../RepositoryModels/RepositoryModels.csproj"
+      "path": "../ITNews.Domain.Services/ITNews.Domain.Services.csproj",
+      "msbuildProject": "../ITNews.Domain.Services/ITNews.Domain.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper >= 8.0.0",
-      "Domain >= 1.0.0",
-      "DomainModels >= 1.0.0",
-      "Microsoft.NETCore.App >= 2.2.0",
-      "Repositories >= 1.0.0"
+      "ITNews.Data.EntityFramework >= 1.0.0",
+      "ITNews.Domain.Contracts >= 1.0.0",
+      "ITNews.Domain.Services >= 1.0.0",
+      "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -3691,14 +3691,14 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj": {
-              "projectPath": "C:\\dev\\ITNews\\DomainModels\\DomainModels.csproj"
+            "C:\\dev\\ITNews\\ITNews.Data.EntityFramework\\ITNews.Data.EntityFramework.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\ITNews.Data.EntityFramework\\ITNews.Data.EntityFramework.csproj"
             },
-            "C:\\dev\\ITNews\\Repositories\\Repositories.csproj": {
-              "projectPath": "C:\\dev\\ITNews\\Repositories\\Repositories.csproj"
+            "C:\\dev\\ITNews\\ITNews.Domain.Contracts\\ITNews.Domain.Contracts.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\ITNews.Domain.Contracts\\ITNews.Domain.Contracts.csproj"
             },
-            "C:\\dev\\ITNews\\Services\\Domain.csproj": {
-              "projectPath": "C:\\dev\\ITNews\\Services\\Domain.csproj"
+            "C:\\dev\\ITNews\\ITNews.Domain.Services\\ITNews.Domain.Services.csproj": {
+              "projectPath": "C:\\dev\\ITNews\\ITNews.Domain.Services\\ITNews.Domain.Services.csproj"
             }
           }
         }

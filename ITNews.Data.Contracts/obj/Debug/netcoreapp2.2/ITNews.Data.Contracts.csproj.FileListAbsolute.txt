@@ -1,0 +1,9 @@
+C:\dev\ITNews\ITNews.Data.Contracts\bin\Debug\netcoreapp2.2\ITNews.Data.Contracts.deps.json
+C:\dev\ITNews\ITNews.Data.Contracts\bin\Debug\netcoreapp2.2\ITNews.Data.Contracts.dll
+C:\dev\ITNews\ITNews.Data.Contracts\bin\Debug\netcoreapp2.2\ITNews.Data.Contracts.pdb
+C:\dev\ITNews\ITNews.Data.Contracts\obj\Debug\netcoreapp2.2\ITNews.Data.Contracts.csproj.CoreCompileInputs.cache
+C:\dev\ITNews\ITNews.Data.Contracts\obj\Debug\netcoreapp2.2\ITNews.Data.Contracts.AssemblyInfoInputs.cache
+C:\dev\ITNews\ITNews.Data.Contracts\obj\Debug\netcoreapp2.2\ITNews.Data.Contracts.AssemblyInfo.cs
+C:\dev\ITNews\ITNews.Data.Contracts\obj\Debug\netcoreapp2.2\ITNews.Data.Contracts.dll
+C:\dev\ITNews\ITNews.Data.Contracts\obj\Debug\netcoreapp2.2\ITNews.Data.Contracts.pdb
+C:\dev\ITNews\ITNews.Data.Contracts\obj\Debug\netcoreapp2.2\ITNews.Data.Contracts.csprojAssemblyReference.cache

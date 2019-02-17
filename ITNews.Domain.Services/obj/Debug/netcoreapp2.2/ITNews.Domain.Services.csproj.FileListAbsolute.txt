@@ -1,0 +1,14 @@
+C:\dev\ITNews\ITNews.Domain.Services\bin\Debug\netcoreapp2.2\ITNews.Domain.Services.deps.json
+C:\dev\ITNews\ITNews.Domain.Services\bin\Debug\netcoreapp2.2\ITNews.Domain.Services.dll
+C:\dev\ITNews\ITNews.Domain.Services\bin\Debug\netcoreapp2.2\ITNews.Domain.Services.pdb
+C:\dev\ITNews\ITNews.Domain.Services\bin\Debug\netcoreapp2.2\ITNews.Data.Contracts.dll
+C:\dev\ITNews\ITNews.Domain.Services\bin\Debug\netcoreapp2.2\ITNews.Domain.Contracts.dll
+C:\dev\ITNews\ITNews.Domain.Services\bin\Debug\netcoreapp2.2\ITNews.Domain.Contracts.pdb
+C:\dev\ITNews\ITNews.Domain.Services\bin\Debug\netcoreapp2.2\ITNews.Data.Contracts.pdb
+C:\dev\ITNews\ITNews.Domain.Services\obj\Debug\netcoreapp2.2\ITNews.Domain.Services.csprojAssemblyReference.cache
+C:\dev\ITNews\ITNews.Domain.Services\obj\Debug\netcoreapp2.2\ITNews.Domain.Services.csproj.CoreCompileInputs.cache
+C:\dev\ITNews\ITNews.Domain.Services\obj\Debug\netcoreapp2.2\ITNews.Domain.Services.AssemblyInfoInputs.cache
+C:\dev\ITNews\ITNews.Domain.Services\obj\Debug\netcoreapp2.2\ITNews.Domain.Services.AssemblyInfo.cs
+C:\dev\ITNews\ITNews.Domain.Services\obj\Debug\netcoreapp2.2\ITNews.Domain.Services.csproj.CopyComplete
+C:\dev\ITNews\ITNews.Domain.Services\obj\Debug\netcoreapp2.2\ITNews.Domain.Services.dll
+C:\dev\ITNews\ITNews.Domain.Services\obj\Debug\netcoreapp2.2\ITNews.Domain.Services.pdb

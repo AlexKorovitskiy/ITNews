@@ -13,3 +13,7 @@
             left: 0;
             overflow: auto;*/
 }
+
+.alert{
+    z-index:100;
+}

@@ -32,9 +32,14 @@
         }
     }
 })
-function ITNewslogIn(token, username) {
-    username = username ? username : 'user';
-    sessionStorage.setItem('email', username);
+function ITNewslogIn(token, user) {
+    sessionStorage.setItem('email', user.Email ? user.Email : 'user');
+    sessionStorage.setItem('currentUserId', user.Id);
+    debugger;
+    let hasAdminRole = user.Roles.some(function (item) { return item.Name == 'admin'; })
+    sessionStorage.setItem('isAdmin', hasAdminRole);
+    let hasWriterRole = user.Roles.some(function (item) { return item.Name == 'writer'; })
+    sessionStorage.setItem('isWriter', hasWriterRole);
     sessionStorage.setItem(tokenKey, token);
     authorizeVue.userIsAuthorize = true;
 }
@@ -43,4 +48,16 @@ function ITNewslogOut() {
     sessionStorage.removeItem(tokenKey);
     authorizeVue.userIsAuthorize = false;
     window.location.href = window.location.href;
+}
+
+function IsAdmin() {
+    return sessionStorage.getItem('isAdmin') == 'true';
+}
+
+function isWriter() {
+    return sessionStorage.getItem('isWriter') == 'true';
+}
+
+function getCurrentUserId() {
+    return sessionStorage.getItem('currentUserId');
 }

@@ -6,8 +6,13 @@
 
 <h1>Persanal Data</h1>
 
-@{ Html.Partial("_UserProfile");}
+@{ Html.RenderPartial("_UserProfile");}
 
+<script src="~/js/user/User.js"></script>
+<script src="~/js/user/UserProfileViewModel.js"></script>
+<script src="~/js/Areas/Admin/UserProfileService.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script src="~/js/user/Role.js"></script>
 <!--
   <div id="persanaldataContainer" class="row">
     <div class="col-md-4">
@@ -33,23 +38,33 @@
     </div>
 </div>
 
--->
 
 
 <script src="~/js/user/User.js"></script>
 <script src="~/js/base/loader.js"></script>
 <script src="~/js/mySpace/MySpaceService.js"></script>
 <script src="~/js/user/UserProfileViewModel.js"></script>
+-->
+
 
 <script>
+    /* $(document).ready(function () {
+         let loader = new Loader({ getActionsUrl: domainPath + '/api/myspace/getActions' });
+         loader.getActions()
+             .done(function (data) {
+                 debugger;
+                 let service = new MySpaceService(data.actions);
+                 let vewModel = new UserProfileViewModel(service);
+                 vewModel.persanalDataVue.initialize();
+             })
+     })*/
     $(document).ready(function () {
-        let loader = new Loader({ getActionsUrl: domainPath + '/api/myspace/getActions' });
+        let loader = new Loader({ getActionsUrl: domainPath + '/api/admin/GetActions' });
         loader.getActions()
             .done(function (data) {
-                debugger;
-                let service = new MySpaceService(data.actions);
-                let vewModel = new UserProfileViewModel(service);
-                vewModel.persanalDataVue.initialize();
-            })
+                let service = new UserProfileService(data.actions);
+                let viewModel = new UserProfileViewModel(service);
+                viewModel.persanalDataVue.initialize();
+            });
     })
 </script>

@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<div id="newsPage">
+    <div class="row">
+        <a v-if="hasAddNewsPermition()" class="btnAddNews btn btn-secondary" asp-controller="news" asp-action="addNews"><span>Add news</span></a>
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a v-for="section in sections" :href="'#list-profile'" v-on:click="sectionClick(section.id)"
+                   class="list-group-item list-group-item-action" data-toggle="list">{{section.name}}</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="list-group">
+                <div v-for="item in news" class="list-group-item list-group-item-action">
+                    <a v-bind:href="item.url" class="list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{item.name}}</h5>
+                            <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">{{item.description}}</p>
+                    </a>
+                    <small>{{item.authorName}}</small>
+                    <a class="small" :href="userProfileUrl(item.authorId)">{{item.authorName}}</a>
+                    <button v-on:click="deleteNews(item.id)" v-if="hasEditPermissions(item)" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <!--
+
+            <a v-for="item in news" v-bind:href="item.url" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{item.name}}</h5>
+                    <small>3 days ago</small>
+                </div>
+                <p class="mb-1">{{item.description}}</p>
+                <small>{{item.authorName}}</small>
+            </a>
+                >-->
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<link href="~/css/NewsListPartial.css" rel="stylesheet" />
+
+<script src="~/js/News/NewsHub.js"></script>
+<script src="~/js/signalr.min.js"></script>
+<script src="~/js/News/newsModel.js"></script>
+<script src="~/js/news/NewsService.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script src="~/js/News/NewsViewModel.js"></script>
+<script src="~/js/section/Section.js"></script>

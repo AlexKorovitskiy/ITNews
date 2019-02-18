@@ -1,0 +1,6 @@
+﻿.btnAddNews {
+    position: fixed;
+    bottom: 120px;
+    right: 100px;
+    z-index: 10;
+}

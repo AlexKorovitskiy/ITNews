@@ -19,7 +19,7 @@
                     })
                 //self._service.getCurrentUser()
                 var id = getUrlParameter('id');
-                self._service.getUser(id)
+                self._service.getUser(id ? id: getCurrentUserId())
                     .done(function (data) {
                         let user = JSON.parse(data);
                         let roles = user.Roles.map(function (item) {

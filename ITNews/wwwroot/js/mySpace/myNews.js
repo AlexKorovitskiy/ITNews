@@ -15,7 +15,7 @@
                     .done(function (data) {
                         var parseData = JSON.parse(data);
                         parseData.forEach(function (item) {
-                            var newObj = new NewsModel(item.Id, item.Author.Name, item.Name, item.Content, item.Description, item.Section, item.Tags);
+                            var newObj = new NewsModel(item.Id, item.Author.Name, item.Name, item.Content, item.Description, item.Section, item.Tags, item.AuthorId);
                             self.myNewsBlock.news.push(newObj);
                         })
                         self.myNewsBlock.$nextTick(function () {

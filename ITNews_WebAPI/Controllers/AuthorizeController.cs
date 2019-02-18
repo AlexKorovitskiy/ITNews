@@ -60,6 +60,7 @@ namespace ITNews.Controllers
                 username = identity.Name
             };
 
+            dbUser.Password = null;
             // сериализация ответа
             Response.ContentType = "application/json";
             await Response.WriteAsync(JsonConvert.SerializeObject(new { token = response, user = dbUser }, Formatting.Indented,

@@ -11,7 +11,7 @@
                 self.registrationVue.user.grant_type = 'password';
                 self.service.registration(self.registrationVue.user)
                     .done(function (data) {
-                        ITNewslogIn(data.token.access_token, data.user.Email);
+                        ITNewslogIn(data.token.access_token, data.user);
                         window.location.href = frontPath;
                     })
                     .fail(function (data) {

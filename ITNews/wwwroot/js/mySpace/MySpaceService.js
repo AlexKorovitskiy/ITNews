@@ -40,5 +40,22 @@
             url: self.actions.updateUserAction,
             data: user
         })
-    }
+    };
+/*
+    self.getRoles = function () {
+        return $.ajax({
+            type: 'GET',
+            url: self.actions.getRolesAction,
+            cache: false
+        });
+    };
+
+    self.getUser = function (id) {
+        return $.ajax({
+            type: 'GET',
+            url: self.actions.getUserAction,
+            data: { id: id },
+            cache: false
+        });
+    };*/
 }

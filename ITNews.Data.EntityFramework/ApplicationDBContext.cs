@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ITNews.Data.Contracts;
+using ITNews.Data.Contracts.Comments;
+using ITNews.Data.Contracts.Users;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using RepositoryModels;
-using RepositoryModels.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -85,6 +86,9 @@ namespace Repositories
             newsTag.HasKey(nt => new { nt.NewsId, nt.TagId });
             newsTag.HasOne(x => x.News).WithMany(x => x.NewsTags).HasForeignKey(x => x.NewsId);
             newsTag.HasOne(x => x.Tag).WithMany(x => x.NewsTags).HasForeignKey(x => x.TagId);
+
+            var comment = modelBuilder.Entity<Comment>();
+            comment.HasKey(x => x.Id);
         }
     }
 }

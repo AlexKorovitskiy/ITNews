@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepositoryModels
+namespace ITNews.Data.Contracts
 {
     public class Tag : EntityBaseNamed
     {

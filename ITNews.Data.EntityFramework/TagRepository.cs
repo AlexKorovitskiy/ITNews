@@ -1,5 +1,5 @@
-﻿using RepositoryModels;
-using RepositoryModels.RepositoryInterfaces;
+﻿using ITNews.Data.Contracts;
+using ITNews.Data.Contracts.RepositoryInterfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

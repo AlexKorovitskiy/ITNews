@@ -1,7 +1,7 @@
 ﻿using DomainModels.ServiceInterfaces;
 using DomainModels.Tag;
-using RepositoryModels;
-using RepositoryModels.RepositoryInterfaces;
+using ITNews.Data.Contracts;
+using ITNews.Data.Contracts.RepositoryInterfaces;
 using Services;
 using System;
 using System.Collections.Generic;

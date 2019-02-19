@@ -1,9 +1,9 @@
-﻿using RepositoryModels.Users;
+﻿using ITNews.Data.Contracts.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepositoryModels
+namespace ITNews.Data.Contracts
 {
     public class News : EntityBaseNamed
     {

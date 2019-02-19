@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace RepositoryModels.RepositoryInterfaces
+namespace ITNews.Data.Contracts.RepositoryInterfaces
 {
     public interface INewsRepository : IEntityRepository<News>
     {

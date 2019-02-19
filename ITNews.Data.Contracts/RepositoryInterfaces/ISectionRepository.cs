@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepositoryModels.RepositoryInterfaces
+namespace ITNews.Data.Contracts.RepositoryInterfaces
 {
     public interface ISectionRepository : IEntityRepository<Section>
     {

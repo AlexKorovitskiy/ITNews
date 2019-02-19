@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using RepositoryModels;
+﻿using ITNews.Data.Contracts;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;

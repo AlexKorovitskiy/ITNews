@@ -116,10 +116,13 @@ namespace ITNews_WebAPI.Controllers
         {
             var actionsObject = new
             {
-                GetNewsAction = Url.Action("GetNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
+                getNewsAction = Url.Action("GetNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
                 getAllTagsAction = Url.Action("GetTags", "News", null, this.Request.Scheme, this.Request.Host.Value),
                 getAllSectionsOfNewsAction = Url.Action("GetAllSectionsOfNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
-                createNewsAction = Url.Action("AddNews", "News", null, this.Request.Scheme, this.Request.Host.Value)
+                createNewsAction = Url.Action("AddNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
+                editNewsAction = Url.Action("EditNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
+                getNewsDetailsAction = Url.Action("GetNewsDetails", "News", null, this.Request.Scheme, this.Request.Host.Value),
+                deleteNewsAction = Url.Action("DeleteNews", "News", null, this.Request.Scheme, this.Request.Host.Value)
             };
             return Json(new { actions = actionsObject });
         }

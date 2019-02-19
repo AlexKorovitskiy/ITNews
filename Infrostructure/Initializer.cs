@@ -5,13 +5,13 @@ using DomainModels.Section;
 using DomainModels.ServiceInterfaces;
 using DomainModels.Tag;
 using DomainModels.Users;
+using ITNews.Data.Contracts;
+using ITNews.Data.Contracts.RepositoryInterfaces;
+using ITNews.Data.Contracts.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Repositories;
-using RepositoryModels;
-using RepositoryModels.RepositoryInterfaces;
-using RepositoryModels.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,9 +66,14 @@ namespace Infrostructure
                 config.CreateMap<Role, RoleInfo>();
                 config.CreateMap<RoleInfo, Role>();
 
-                config.CreateMap<News, NewsInfo>();
+                config.CreateMap<News, NewsInfo>()
+                .AfterMap((source, dest) =>
+                {
+                    dest.Tags = source.NewsTags.Select(x => new TagInfo { Id = x.TagId, Name = x.Tag.Name, News = null });
+                });
                 config.CreateMap<NewsInfo, News>()
                     .ForMember(x => x.NewsTags, s => s.Ignore())
+                    .ForMember(x => x.Section, s => s.Ignore())
                     .AfterMap((source, dest) =>
                     {
                         dest.NewsTags = source.Tags != null

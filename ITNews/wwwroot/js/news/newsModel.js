@@ -6,7 +6,7 @@
     self.name = name;
     self.content = content;
     self.description = description;
-    self.section = section;
+    self.sectionId = section;
     self.tags = tags ? tags : [];
     self.url = frontPath + '/news/News?id=' + id;
 }

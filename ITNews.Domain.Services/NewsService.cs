@@ -1,7 +1,7 @@
 ﻿using DomainModels.News;
 using DomainModels.ServiceInterfaces;
-using RepositoryModels;
-using RepositoryModels.RepositoryInterfaces;
+using ITNews.Data.Contracts;
+using ITNews.Data.Contracts.RepositoryInterfaces;
 using Services;
 using System;
 using System.Collections.Generic;
@@ -29,5 +29,6 @@ namespace Domain
                 x => x.Author);
             return AutoMapper.Mapper.Map<IEnumerable<NewsInfo>>(news);
         }
+        
     }
 }

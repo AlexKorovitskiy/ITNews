@@ -9,6 +9,7 @@
             cache: true
         });
     };
+
     self.getNews = function (userId, sectionId) {
         return $.ajax({
             type: 'GET',
@@ -17,4 +18,13 @@
             data: {userId: userId, sectionId: sectionId}
         });
     };
+
+    self.deleteNews = function (id) {
+        return $.ajax({
+            type: 'GET',
+            url: self._actions.deleteNewsAction,
+            cache: false,
+            data: { id: id }
+        });
+    }; 
 }

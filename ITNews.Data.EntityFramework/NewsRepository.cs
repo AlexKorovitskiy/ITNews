@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RepositoryModels;
-using RepositoryModels.RepositoryInterfaces;
+﻿using ITNews.Data.Contracts;
+using ITNews.Data.Contracts.RepositoryInterfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,6 +57,17 @@ namespace Repositories
                 .Include(x => x.NewsTags)
                     .ThenInclude(x => x.Tag)
                 .ToList();
+        }
+
+        public override News GetModelById(int id) {
+            return ApplicationContext.Set<News>()
+                .Where(t => t.Id.Equals(id))
+                .Take(1)
+                .Include(x => x.Author)
+                .Include(x => x.Section)
+                .Include(x => x.NewsTags)
+                    .ThenInclude(x => x.Tag)
+                .FirstOrDefault();
         }
 
         private void DeleteUnselectedItems(News entityFromDataBase, News entityFromService)

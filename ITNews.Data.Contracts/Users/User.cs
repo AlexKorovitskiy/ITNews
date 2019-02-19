@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepositoryModels.Users
+namespace ITNews.Data.Contracts.Users
 {
     public class User : EntityBaseNamed
     {

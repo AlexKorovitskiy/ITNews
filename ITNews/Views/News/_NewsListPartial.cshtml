@@ -22,9 +22,8 @@
                         </div>
                         <p class="mb-1">{{item.description}}</p>
                     </a>
-                    <small>{{item.authorName}}</small>
-                    <a class="small" :href="userProfileUrl(item.authorId)">{{item.authorName}}</a>
-                    <button v-on:click="deleteNews(item.id)" v-if="hasEditPermissions(item)" type="button" class="close"><span aria-hidden="true">&times;</span></button>
+                    <a class="linkDefault small" :href="userProfileUrl(item.authorId)">{{item.authorName}}</a>
+                    <button v-on:click="deleteNewsClick(item.id)" v-if="hasEditPermissions(item)" type="button" class="close"><span aria-hidden="true">&times;</span></button>
                 </div>
 
                 <!--

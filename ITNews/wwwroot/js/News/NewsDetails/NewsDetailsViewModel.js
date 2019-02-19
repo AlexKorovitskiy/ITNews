@@ -9,9 +9,19 @@
             tagsStringArray: [],
             selectedTags: [],
             sections: []
+
         },
         methods: {
             initialize: function () {
+                var newsId = getUrlParameter('id');
+                if (newsId) {
+                    self._service.getNewsDetails(newsId)
+                        .done(function (data) {
+                            let item = JSON.parse(data);
+                            self.newsVue.news = new NewsModel(item.Id, item.Author.Name, item.Name, item.Content, item.Description, item.Section.Id, item.Tags, item.AuthorId);
+                            item.Tags.forEach(function (item) { self.newsVue.selectedTags.push(item.Name) });
+                        });
+                }
                 self._service.getAllTags()
                     .done(function (data) {
                         let tags = JSON.parse(data);
@@ -46,7 +56,8 @@
                         news.tags.push(new Tag(undefined, selectedTag))
                     }
                 });
-                self._service.createNews(news)
+                
+                self._service.saveNews(news)
                     .done(function (data) {
                         showSuccessAlert();
                     })

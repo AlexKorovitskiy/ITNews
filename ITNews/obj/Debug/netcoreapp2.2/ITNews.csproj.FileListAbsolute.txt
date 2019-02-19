@@ -111,7 +111,7 @@ C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\ITNews.pdb
 C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\ITNews.csproj.CopyComplete
 C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\_AdminLayout.g.cshtml.cs
 C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Admin\View.g.cshtml.cs
-C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_News.g.cshtml.cs
 C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\Razor\Views\News\AddNews.g.cshtml.cs
 C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\ITNews.csprojAssemblyReference.cache
 C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\Razor\Views\News\_NewsListPartial.g.cshtml.cs
+C:\dev\ITNews\ITNews\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_NewsDeatails.g.cshtml.cs

@@ -1,8 +1,7 @@
 ﻿using DomainModels.ServiceInterfaces;
 using DomainModels.Users;
-using RepositoryModels;
-using RepositoryModels.RepositoryInterfaces;
-using RepositoryModels.Users;
+using ITNews.Data.Contracts.RepositoryInterfaces;
+using ITNews.Data.Contracts.Users;
 using Services;
 using System;
 using System.Collections.Generic;

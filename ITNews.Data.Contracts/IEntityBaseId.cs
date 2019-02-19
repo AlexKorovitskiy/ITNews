@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RepositoryModels
+namespace ITNews.Data.Contracts
 {
     public interface IEntityBaseId
     {

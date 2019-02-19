@@ -1,5 +1,5 @@
 ﻿using DomainModels;
-using RepositoryModels;
+using ITNews.Data.Contracts;
 using System;
 using System.Collections.Generic;
 

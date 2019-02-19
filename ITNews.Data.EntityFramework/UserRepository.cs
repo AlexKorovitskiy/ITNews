@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RepositoryModels.RepositoryInterfaces;
-using RepositoryModels.Users;
+﻿using ITNews.Data.Contracts.RepositoryInterfaces;
+using ITNews.Data.Contracts.Users;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 

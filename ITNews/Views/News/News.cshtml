@@ -6,6 +6,30 @@
 
 <h1>News</h1>
 
+@{ Html.RenderPartial("~/Views/Shared/_NewsDeatails.cshtml");}
+
+
+<script src="~/js/section/Section.js"></script>
+<script src="~/js/tag/Tag.js"></script>
+<script src="~/js/news/NewsDetails/NewsDetailsViewModel.js"></script>
+<script src="~/js/news/NewsDetails/NewsDetailsService.js"></script>
+<script src="~/js/news/newsModel.js"></script>
+<script src="~/js/base/loader.js"></script>
+<script>
+    $(document).ready(function () {
+        let loader = new Loader({ getActionsUrl: domainPath + '/api/news/getActions' });
+        loader.getActions()
+            .done(function (data) {
+                let service = new NewsDetailsService(data.actions);
+                let viewModel = new NewsDetailsViewModel(service);
+                viewModel.newsVue.initialize();
+            })
+    });
+</script>
+
+
+
+<!--
 <Div id="newsEntity">
     <div>
         <div class="form-group">
@@ -39,3 +63,4 @@
 <link href="~/css/markDown/bootstrap-markdown-editor.css" rel="stylesheet">
 <script src="~/lib/bootstap_3.3.1/js/bootstrap.min.js"></script>
 <script src="~/js/markDown/bootstrap-markdown-editor.js"></script>
+-->

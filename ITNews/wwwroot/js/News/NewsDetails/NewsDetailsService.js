@@ -16,12 +16,20 @@
             cache: true
         });
     };
-    
-    self.createNews = function (news) {
+
+    self.saveNews = function (news) {
         return $.ajax({
             type: 'POST',
-            url: self._actions.createNewsAction,
+            url: news.id && news.id > 0 ? self._actions.editNewsAction : self._actions.createNewsAction,
             data: { news: news }
+        });
+    };
+
+    self.getNewsDetails = function (id) {
+        return $.ajax({
+            type: 'GET',
+            url: self._actions.getNewsDetailsAction,
+            data: { id: id }
         });
     };
 }

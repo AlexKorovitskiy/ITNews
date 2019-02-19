@@ -45,6 +45,12 @@
             sectionClick: function (sectionId) {
                 self.newsVue.activeSection = sectionId;
             },
+            deleteNewsClick: function (id) {
+                self._service.deleteNews(id)
+                    .done(function (data) {
+                        showSuccessAlert();
+                    });
+            },
             hasEditPermissions: function (news) {
                 if (IsAdmin()) {
                     return true;

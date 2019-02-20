@@ -38,7 +38,7 @@ namespace Repositories
             base.Create(entity);
         }
 
-        public IEnumerable<News> GetNews(Expression<Func<News, bool>> conditions, 
+        public IEnumerable<News> GetNews(Expression<Func<News, bool>> conditions,
             params Expression<Func<News, object>>[] includes)
         {
             var newsQuery = ApplicationContext.Set<News>().AsQueryable();
@@ -47,8 +47,12 @@ namespace Repositories
             {
                 newsQuery = newsQuery.Include(item);
             }
-            newsQuery = newsQuery.Include(x => x.NewsTags)
-                    .ThenInclude(x => x.Tag);
+
+            newsQuery = newsQuery
+                .Include(x => x.NewsTags)
+                    .ThenInclude(x => x.Tag)
+                .Include(x => x.NewsComments)
+                    .ThenInclude(x => x.Comment);
             return newsQuery.ToList();
 
             return ApplicationContext.Set<News>()
@@ -59,7 +63,8 @@ namespace Repositories
                 .ToList();
         }
 
-        public override News GetModelById(int id) {
+        public override News GetModelById(int id)
+        {
             return ApplicationContext.Set<News>()
                 .Where(t => t.Id.Equals(id))
                 .Take(1)
@@ -67,6 +72,8 @@ namespace Repositories
                 .Include(x => x.Section)
                 .Include(x => x.NewsTags)
                     .ThenInclude(x => x.Tag)
+                .Include(x => x.NewsComments)
+                    .ThenInclude(x => x.Comment)
                 .FirstOrDefault();
         }
 

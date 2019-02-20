@@ -26,5 +26,5 @@
             cache: false,
             data: { id: id }
         });
-    }; 
+    };
 }

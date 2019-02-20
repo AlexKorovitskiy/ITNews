@@ -32,4 +32,12 @@
             data: { id: id }
         });
     };
+    
+    self.createComment = function (comment) {
+        return $.ajax({
+            type: 'POST',
+            url: self._actions.createCommentAction,
+            data: { comment: comment }
+        });
+    }; 
 }

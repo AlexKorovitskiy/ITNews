@@ -8,8 +8,8 @@
             tagsObject: [],
             tagsStringArray: [],
             selectedTags: [],
-            sections: []
-
+            sections: [],
+            newComment: new Comment()
         },
         methods: {
             initialize: function () {
@@ -18,7 +18,8 @@
                     self._service.getNewsDetails(newsId)
                         .done(function (data) {
                             let item = JSON.parse(data);
-                            self.newsVue.news = new NewsModel(item.Id, item.Author.Name, item.Name, item.Content, item.Description, item.Section.Id, item.Tags, item.AuthorId);
+                            let comments = item.Comments.map(function (x) { return new Comment(x.Id, x.Content, x.CreatedDate) });
+                            self.newsVue.news = new NewsModel(item.Id, item.Author.Name, item.Name, item.Content, item.Description, item.Section.Id, item.Tags, item.AuthorId, comments, item.CreatedDate);
                             item.Tags.forEach(function (item) { self.newsVue.selectedTags.push(item.Name) });
                         });
                 }
@@ -74,6 +75,13 @@
                         self.newsVue.selectedTags.splice(index, 1);
                     }
                 })
+            },
+            createComment: function () {
+                this.newComment.newsId = this.news.id;
+                self._service.createComment(this.newComment)
+                    .done(function (data) {
+                        self.newsVue.newComment = new Comment();
+                    });
             }
         }
     });

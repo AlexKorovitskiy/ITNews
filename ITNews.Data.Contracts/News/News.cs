@@ -14,5 +14,7 @@ namespace ITNews.Data.Contracts
         public string Content { get; set; }
         public int AuthorId { get; set; }
         public virtual User Author { get; set; }
+        public virtual ICollection<NewsComment> NewsComments { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

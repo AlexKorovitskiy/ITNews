@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Repositories
@@ -79,6 +80,7 @@ namespace Repositories
             news.Property(x => x.Content).IsRequired().IsUnicode();
             news.Property(x => x.Description).IsUnicode().HasMaxLength(200);
             news.Property(x => x.Name).IsRequired().IsUnicode().HasMaxLength(100);
+            news.Property(x => x.CreatedDate).ValueGeneratedOnAdd().HasDefaultValueSql("getdate()");
             news.HasOne(x => x.Author).WithMany(x => x.News).HasForeignKey(x => x.AuthorId);
             news.HasOne(x => x.Section).WithMany(x => x.News).HasForeignKey(x => x.SectionId);
 
@@ -89,6 +91,17 @@ namespace Repositories
 
             var comment = modelBuilder.Entity<Comment>();
             comment.HasKey(x => x.Id);
+            comment.Property(x => x.Content).IsRequired().IsUnicode();
+            comment.Property(x => x.CreatedDate).ValueGeneratedOnAdd().HasDefaultValueSql("getdate()");
+            comment.HasOne(x => x.Author).WithMany(x => x.Comments).HasForeignKey(x => x.AuthorId).OnDelete(DeleteBehavior.Restrict);
+
+
+            var newsComment = modelBuilder.Entity<NewsComment>();
+            newsComment.HasKey(key => new { key.NewsId, key.CommentId });
+            newsComment.HasOne(x => x.News).WithMany(x => x.NewsComments).HasForeignKey(x => x.NewsId).OnDelete(DeleteBehavior.Restrict);
+            Expression<Func<NewsComment, object>> foreignKeyExpression = x => x.CommentId;
+            newsComment.HasOne(x => x.Comment).WithOne(x => x.NewsComment).HasForeignKey(foreignKeyExpression).OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

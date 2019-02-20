@@ -1,6 +1,7 @@
 ﻿using DomainModels.Section;
 using DomainModels.Tag;
 using DomainModels.Users;
+using ITNews.Domain.Contracts.Comment;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,5 +17,7 @@ namespace DomainModels.News
         public string Content { get; set; }
         public int AuthorId { get; set; }
         public UserInfo Author { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public IEnumerable<CommentInfo> Comments { get; set; }
     }
 }

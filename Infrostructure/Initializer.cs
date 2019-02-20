@@ -6,8 +6,13 @@ using DomainModels.ServiceInterfaces;
 using DomainModels.Tag;
 using DomainModels.Users;
 using ITNews.Data.Contracts;
+using ITNews.Data.Contracts.Comments;
 using ITNews.Data.Contracts.RepositoryInterfaces;
 using ITNews.Data.Contracts.Users;
+using ITNews.Data.EntityFramework;
+using ITNews.Domain.Contracts.Comment;
+using ITNews.Domain.Contracts.ServiceInterfaces;
+using ITNews.Domain.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,6 +46,8 @@ namespace Infrostructure
             services.AddTransient<ITagRepository, TagRepository>();
             services.AddTransient<ISectionService, SectionService>();
             services.AddTransient<ISectionRepository, SectionRepository>();
+            services.AddTransient<ICommentService, CommentService>();
+            services.AddTransient<ICommentRepository, CommentRepository>();
         }
 
         public static void InitializeAutoMapper(this IServiceCollection services)
@@ -70,15 +77,29 @@ namespace Infrostructure
                 .AfterMap((source, dest) =>
                 {
                     dest.Tags = source.NewsTags.Select(x => new TagInfo { Id = x.TagId, Name = x.Tag.Name, News = null });
+                    dest.Comments = source.NewsComments.Select(x => new CommentInfo
+                        {
+                        NewsId = x.NewsId,
+                        Id = x.CommentId,
+                        Content = x.Comment.Content,
+                        CreatedDate = x.Comment.CreatedDate
+                    });
                 });
                 config.CreateMap<NewsInfo, News>()
                     .ForMember(x => x.NewsTags, s => s.Ignore())
                     .ForMember(x => x.Section, s => s.Ignore())
+                    .ForMember(x => x.NewsComments, s => s.Ignore())
                     .AfterMap((source, dest) =>
                     {
                         dest.NewsTags = source.Tags != null
-                        ? source.Tags.Select(x => new NewsTag { NewsId = source.Id, TagId = x.Id, Tag = new Tag { Id = x.Id, Name = x.Name } }).ToList()
-                        : new List<NewsTag>();
+                            ? source.Tags.Select(x => new NewsTag { NewsId = source.Id, TagId = x.Id, Tag = new Tag { Id = x.Id, Name = x.Name } }).ToList()
+                            : new List<NewsTag>();
+                        /*dest.NewsComments = source.Comments != null
+                            ? source.Comments.Select(x=>new NewsComment
+                            {
+                                NewsId = source.Id,
+                                CommentId = source.com
+                            })*/
                     });
 
                 config.CreateMap<Tag, TagInfo>();
@@ -87,6 +108,18 @@ namespace Infrostructure
 
                 config.CreateMap<Section, SectionInfo>();
                 config.CreateMap<SectionInfo, Section>();
+
+                config.CreateMap<Comment, CommentInfo>()
+                    /*.ForMember(x => x.Id, q => q.MapFrom(w => w.Id))
+                    .ForMember(x => x.NewsId, q => q.MapFrom(w => w.NewsComment.NewsId))*/;
+                config.CreateMap<CommentInfo, Comment>()
+                    .ForMember(x => x.NewsComment, q => q.Ignore())
+                    .AfterMap((source, dest) =>
+                    {
+                        dest.NewsComment = source.NewsId > 0
+                        ? new NewsComment { NewsId = source.NewsId, CommentId = source.Id }
+                        : null;
+                    });
             });
         }
     }

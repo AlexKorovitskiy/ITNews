@@ -122,7 +122,8 @@ namespace ITNews_WebAPI.Controllers
                 createNewsAction = Url.Action("AddNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
                 editNewsAction = Url.Action("EditNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
                 getNewsDetailsAction = Url.Action("GetNewsDetails", "News", null, this.Request.Scheme, this.Request.Host.Value),
-                deleteNewsAction = Url.Action("DeleteNews", "News", null, this.Request.Scheme, this.Request.Host.Value)
+                deleteNewsAction = Url.Action("DeleteNews", "News", null, this.Request.Scheme, this.Request.Host.Value),
+                createCommentAction = Url.Action("CreateComment", "Comment", null, this.Request.Scheme, this.Request.Host.Value)
             };
             return Json(new { actions = actionsObject });
         }

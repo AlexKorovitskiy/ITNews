@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITNews.Data.Contracts.Comments;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,5 +12,6 @@ namespace ITNews.Data.Contracts.Users
         public virtual ICollection<UserRole> UserRoles { get; set; }
         public bool IsConfirm { get; set; }
         public virtual IEnumerable<News> News { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

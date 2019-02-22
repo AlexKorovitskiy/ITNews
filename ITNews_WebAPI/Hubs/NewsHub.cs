@@ -1,4 +1,5 @@
 ﻿using DomainModels.News;
+using ITNews.Domain.Contracts.Comment;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;

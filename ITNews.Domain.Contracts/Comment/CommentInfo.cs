@@ -10,5 +10,6 @@ namespace ITNews.Domain.Contracts.Comment
         public string Content { get; set; }
         public int NewsId { get; set; }
         public DateTime CreatedDate { get; set; }
+        public int AuthorId { get; set; }
     }
 }

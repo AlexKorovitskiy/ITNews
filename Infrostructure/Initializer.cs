@@ -82,7 +82,8 @@ namespace Infrostructure
                         NewsId = x.NewsId,
                         Id = x.CommentId,
                         Content = x.Comment.Content,
-                        CreatedDate = x.Comment.CreatedDate
+                        CreatedDate = x.Comment.CreatedDate,
+                        AuthorId = x.Comment.AuthorId
                     });
                 });
                 config.CreateMap<NewsInfo, News>()

@@ -9,7 +9,8 @@
             tagsStringArray: [],
             selectedTags: [],
             sections: [],
-            newComment: new Comment()
+            newComment: new Comment(),
+            commentsHub: {}
         },
         methods: {
             initialize: function () {
@@ -18,11 +19,12 @@
                     self._service.getNewsDetails(newsId)
                         .done(function (data) {
                             let item = JSON.parse(data);
-                            let comments = item.Comments.map(function (x) { return new Comment(x.Id, x.Content, x.CreatedDate) });
+                            let comments = item.Comments.map(function (x) { return new Comment(x.Id, x.Content, x.CreatedDate, x.NewsId, x.AuthorId) });
                             self.newsVue.news = new NewsModel(item.Id, item.Author.Name, item.Name, item.Content, item.Description, item.Section.Id, item.Tags, item.AuthorId, comments, item.CreatedDate);
                             item.Tags.forEach(function (item) { self.newsVue.selectedTags.push(item.Name) });
                         });
-                }
+                };
+                this.commentsHub = new CommentsHub(this.addCommentToArr, this.updateCommentToArr, this.removeComment);
                 self._service.getAllTags()
                     .done(function (data) {
                         let tags = JSON.parse(data);
@@ -82,6 +84,36 @@
                     .done(function (data) {
                         self.newsVue.newComment = new Comment();
                     });
+            },
+            addCommentToArr: function (comment) {
+                if (comment.newsId == this.news.id) {
+                    let com = new Comment(comment.id, comment.content, comment.createdDate, comment.newsId, comment.authorId);
+                    this.news.comments.push(com);
+                }
+            },
+            updateCommentToArr: function (comment) {
+                if (comment.newsId == this.news.id) {
+                    this.news.comments.push(comment);
+
+                    this.news.comments.some(function (item, index) {
+                        if (item.id == comment.id) {
+                            Vue.set(this.news.comments, index, comment)
+                            return true;
+                        }
+                        return false;
+                    });
+                }
+            },
+            removeComment: function (id) {
+                let currentIndex;
+                this.news.comments.some(function (item, index) {
+                    if (item.id == id) {
+                        currentIndex = index;
+                        return true;
+                    }
+                    return false;
+                });
+                this.news.comments.splice(currentIndex, 1);
             }
         }
     });

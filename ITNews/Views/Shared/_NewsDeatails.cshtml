@@ -52,28 +52,32 @@
     <div style="text-align:right">
         <input id="applyNewNews" v-on:click="applyClick" type="button" style="display:inline-block" class="btn btn-light" name="apply" value="Apply" />
     </div>
-
-    <div class="commentaries d-flex justify-content-center">
-        <div v-for="comment in news.comments" class="commentBlock">
-            <div class="authorBlock">
-
+    <div class="commentaries d-flex justify-content-center ">
+        <div class="d-flex flex-column">
+            <div v-for="comment in news.comments" class="commentBlock">
+                <div class="authorBlock">
+                    <img src="~/icon/man_default_avatar.png" class="img-thumbnail rounded float-left" alt="Cinque Terre">
+                </div>
+                <div class="contentBlock p-2 bd-highlight">
+                    <textarea class="form-control" v-model="comment.content"></textarea>
+                </div>
             </div>
-            <div class="contentBlock">
-                <textarea v-model="comment.content"></textarea>
-            </div>
-        </div>
-        <div class="addNewComment">
-            <textarea v-model="newComment.content" class="form-control"></textarea>
-            <div class="d-flex align-items-end flex-column bd-highlight mb-3">
-                <input v-on:click="createComment"
-                       class="btn btn-light small p-2 bd-highlight" type="button" name="name" value="save" />
+            _________________
+            <hr />
+            <div class="addNewComment">
+                <textarea v-model="newComment.content" class="p-2 bd-highlight form-control"></textarea>
+                <div class="d-flex align-items-end flex-column bd-highlight mb-3">
+                    <input v-on:click="createComment"
+                           class="btn btn-light d-sm-flex p-2 bd-highlight" type="button" name="name" value="save" />
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<link href="~/css/newsPartial.css" rel="stylesheet" />
+<link href="~/css/NewsDetailsPartial.css" rel="stylesheet" />
 <script src="~/js/Comment/Comment.js"></script>
+<script src="~/js/Comment/CommentHub.js"></script>
 <!--
 
 <script src="~/js/NewsPartialVue.js"></script>

@@ -4,15 +4,15 @@
 <div id="newsPartial" class="col-md-8 offset-2">
     <div class="form-group row">
         <label class="col-form-label col-sm-2">Name</label>
-        <input class="form-control col-sm-10" type="text" name="name" v-model="news.name" />
+        <input class="form-control col-sm-10" type="text" name="name" v-model="news.name" :disabled="!isEditMode" />
     </div>
     <div class="form-group row">
         <label class="col-form-label col-sm-2">Description</label>
-        <input class="form-control col-sm-10" type="text" name="name" v-model="news.description" />
+        <input class="form-control col-sm-10" type="text" name="name" v-model="news.description" :disabled="!isEditMode" />
     </div>
     <div class="form-group row">
         <label class="col-form-label col-sm-2">Content</label>
-        <textarea class="form-control col-sm-10" id="createNewsTextArea" v-model="news.content"></textarea>
+        <textarea class="form-control col-sm-10" id="createNewsTextArea" v-model="news.content" :disabled="!isEditMode"></textarea>
     </div>
     <div class="tags-form">
         <div class="tags-label">
@@ -20,7 +20,7 @@
                 <div v-for="item in selectedTags" class="p-2 bd-highlight align-items-center">
                     <span class="d-flex badge badge-pill badge-secondary">
                         <span class="align-self-center">#{{item}}</span>
-                        <button type="button" v-on:click="removeTag(item)" class="close align-self-center" aria-label="Close">
+                        <button type="button" v-on:click="removeTag(item)" v-if="isEditMode" class="close align-self-center" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </span>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="tags-input d-flex flex-row-reverse bd-highlight">
-            <div class="p-2 bd-highlight">
+            <div v-show="isEditMode" class="p-2 bd-highlight">
                 <form autocomplete="off" action="/action_page.php">
                     <label class="col-form-label-sm">Tags:</label>
                     <div class="autocomplete" style="width:300px;">
@@ -43,27 +43,41 @@
             <div class="input-group-prepend">
                 <label class="input-group-text" for="selectSection">Section</label>
             </div>
-            <select class="custom-select" id="selectSection" v-model="news.sectionId">
+            <select class="custom-select" id="selectSection" v-model="news.sectionId" :disabled="!isEditMode">
                 <option v-for="section in sections" v-bind:value="section.id">{{section.name}}</option>
             </select>
         </div>
     </div>
 
-    <div style="text-align:right">
+    <div v-if="isEditMode" style="text-align:right">
         <input id="applyNewNews" v-on:click="applyClick" type="button" style="display:inline-block" class="btn btn-light" name="apply" value="Apply" />
     </div>
-    <div class="commentaries d-flex justify-content-center ">
+    <div v-if="!isEditMode" style="text-align:right">
+        <input id="editNewNews" v-on:click="editNewsClick" type="button" style="display:inline-block" class="btn btn-light" name="edit" value="Edit" />
+    </div>
+    <div v-if="!isEditMode" class="commentaries d-flex justify-content-center ">
         <div class="d-flex flex-column">
-            <div v-for="comment in news.comments" class="commentBlock">
-                <div class="authorBlock">
-                    <img src="~/icon/man_default_avatar.png" class="img-thumbnail rounded float-left" alt="Cinque Terre">
-                </div>
-                <div class="contentBlock p-2 bd-highlight">
-                    <textarea class="form-control" v-model="comment.content"></textarea>
+            <div v-for="comment in news.comments" class="commentBlock d-flex d-inline-flex">
+                <div class="d-flex flex-column">
+                    <div class="d-flex d-inline-flex">
+                        <div class="authorBlock p-2 d-flex flex-column">
+                            <img src="~/icon/man_default_avatar.png" class="img-thumbnail rounded float-left d-flex d-inline-flex" alt="Cinque Terre">
+                            <a :href="comment.author.url">
+                                <label class="additionalText d-flex d-inline-flex">{{comment.author.name}}</label>
+                            </a>
+                        </div>
+                        <div class="contentBlock p-2 bd-highlight">
+                            <textarea class="form-control" v-model="comment.content" disabled="disabled"></textarea>
+                        </div>
+                    </div>
+                    <div class="additionalBlock d-flex d-inline-flex justify-content-end">
+                        <label class="additionalText">{{comment.createdDate}}</label>
+                    </div>
                 </div>
             </div>
-            _________________
-            <hr />
+            <br />
+            <br />
+            <br />
             <div class="addNewComment">
                 <textarea v-model="newComment.content" class="p-2 bd-highlight form-control"></textarea>
                 <div class="d-flex align-items-end flex-column bd-highlight mb-3">
@@ -85,10 +99,10 @@
 -->
 <script src="~/js/autocomplite.js"></script>
 <script>
-           /* $(document).ready(function () {
-                window.viewModel = new NewsPartialViewModel();
-                window.viewModel.newsVue.initialize();
-            });*/
+                   /* $(document).ready(function () {
+                        window.viewModel = new NewsPartialViewModel();
+                        window.viewModel.newsVue.initialize();
+                    });*/
 </script>
 
 <link href="~/css/AutoComplete.css" rel="stylesheet" />

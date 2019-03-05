@@ -10,7 +10,8 @@
             selectedTags: [],
             sections: [],
             newComment: new Comment(),
-            commentsHub: {}
+            commentsHub: {},
+            isEditMode: false
         },
         methods: {
             initialize: function () {
@@ -19,7 +20,9 @@
                     self._service.getNewsDetails(newsId)
                         .done(function (data) {
                             let item = JSON.parse(data);
-                            let comments = item.Comments.map(function (x) { return new Comment(x.Id, x.Content, x.CreatedDate, x.NewsId, x.AuthorId) });
+                            let comments = item.Comments.map(function (x) {
+                                return new Comment(x.Id, x.Content, x.CreatedDate, x.NewsId, x.AuthorId, x.Author)
+                            });
                             self.newsVue.news = new NewsModel(item.Id, item.Author.Name, item.Name, item.Content, item.Description, item.Section.Id, item.Tags, item.AuthorId, comments, item.CreatedDate);
                             item.Tags.forEach(function (item) { self.newsVue.selectedTags.push(item.Name) });
                         });
@@ -44,6 +47,9 @@
                         });
                     });
             },
+            editNewsClick: function () {
+                this.isEditMode = true;
+            },
             applyClick: function () {
                 let news = self.newsVue.news;
                 news.tags = [];
@@ -63,6 +69,7 @@
                 self._service.saveNews(news)
                     .done(function (data) {
                         showSuccessAlert();
+                        self.newsVue.isEditMode = false;
                     })
                     .fail(function (data) {
 

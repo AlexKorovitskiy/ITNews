@@ -34,6 +34,23 @@
     font-size: 14px;
 }
 
-.commentaries .authorBlock img {
-    height: 50px;
+.commentaries .contentBlock textarea {
+    width: 300px;
+}
+
+.commentaries .authorBlock {
+    padding-bottom: 0px !important;
+}
+
+    .commentaries .authorBlock img {
+        height: 50px;
+    }
+
+.commentaries .commentBlock .additionalBlock {
+    padding-right: 8px;
+}
+
+.additionalText, label {
+    font-size: x-small;
+    font-style: italic;
 }

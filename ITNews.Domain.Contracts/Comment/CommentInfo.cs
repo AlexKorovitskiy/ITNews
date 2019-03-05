@@ -1,4 +1,5 @@
 ﻿using DomainModels;
+using DomainModels.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,5 +12,6 @@ namespace ITNews.Domain.Contracts.Comment
         public int NewsId { get; set; }
         public DateTime CreatedDate { get; set; }
         public int AuthorId { get; set; }
+        public UserInfo Author { get; set; }
     }
 }

@@ -56,34 +56,48 @@ namespace Infrostructure
             {
                 config.CreateMap<User, UserInfo>()
                     .ForMember(x => x.Roles, q => q.Ignore())
-                    .AfterMap((x, w) =>
+                    .ForMember(x => x.News, q => q.Ignore())
+                    .AfterMap((source, dest) =>
                     {
-                        w.Roles = x.UserRoles != null
-                        ? x.UserRoles.Where(q => q.Role != null).Select(q => new RoleInfo { Id = q.Role.Id, Name = q.Role.Name })
-                        : null;
+                        dest.Roles = source.UserRoles != null
+                            ? source.UserRoles.Where(q => q.Role != null).Select(q => new RoleInfo { Id = q.Role.Id, Name = q.Role.Name })
+                            : null;
+                        dest.News = source.News != null
+                            ? source.News.Select(q => new NewsInfo { Id = q.Id, Name = q.Name, Content = q.Content, CreatedDate = q.CreatedDate, Description = q.Description, AuthorId = q.AuthorId, SectionId = q.SectionId })
+                            : null;
                     });
                 config.CreateMap<UserInfo, User>()
                     .ForMember(x => x.UserRoles, q => q.Ignore())
-                    .AfterMap((x, y) =>
+                    .AfterMap((source, dest) =>
                     {
-                        y.UserRoles = x.Roles != null //new List<UserRole> { new UserRole { RoleId = 1 } };
-                        ? x.Roles.Select(q => new UserRole { RoleId = q.Id, UserId = x.Id }).ToList()
+                        dest.UserRoles = source.Roles != null //new List<UserRole> { new UserRole { RoleId = 1 } };
+                        ? source.Roles.Select(q => new UserRole { RoleId = q.Id, UserId = source.Id }).ToList()
                         : null;
                     });
                 config.CreateMap<Role, RoleInfo>();
                 config.CreateMap<RoleInfo, Role>();
 
                 config.CreateMap<News, NewsInfo>()
+                .ForMember(x => x.Comments, w => w.Ignore())
                 .AfterMap((source, dest) =>
                 {
                     dest.Tags = source.NewsTags.Select(x => new TagInfo { Id = x.TagId, Name = x.Tag.Name, News = null });
-                    dest.Comments = source.NewsComments.Select(x => new CommentInfo
-                        {
+                    dest.Comments = source.NewsComments == null ? new List<CommentInfo>() :
+                    source.NewsComments.Select(x => new CommentInfo
+                    {
                         NewsId = x.NewsId,
                         Id = x.CommentId,
                         Content = x.Comment.Content,
                         CreatedDate = x.Comment.CreatedDate,
-                        AuthorId = x.Comment.AuthorId
+                        AuthorId = x.Comment.AuthorId,
+                        Author = x.Comment.Author != null
+                            ? new UserInfo
+                            {
+                                Email = x.Comment.Author.Email,
+                                Id = x.Comment.Author.Id,
+                                Name = x.Comment.Author.Name
+                            }
+                            : null
                     });
                 });
                 config.CreateMap<NewsInfo, News>()
